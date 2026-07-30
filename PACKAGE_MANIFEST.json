@@ -30,13 +30,13 @@
                   },
                   {
                       "path":  ".github/workflows/release.yml",
-                      "bytes":  2468,
-                      "sha256":  "25e80c6fa6f4c522d75ddc3b08cd0526e8a5502df034915d266205c41ef25818"
+                      "bytes":  2522,
+                      "sha256":  "bdfedad0d9ef80032ec15e8c295c99914c1312b3163877126ac9148d703696b7"
                   },
                   {
                       "path":  ".github/workflows/validate.yml",
-                      "bytes":  1251,
-                      "sha256":  "d9390fb71e4cda4562e9d1db4aa8390bf3c3463f0896ee9e97ed44cf04116b16"
+                      "bytes":  1305,
+                      "sha256":  "94f9310952da2ff8b8a452036125081eeb0f39573b9ce6cfe94bc8cb6b190193"
                   },
                   {
                       "path":  ".gitignore",
@@ -1005,8 +1005,8 @@
                   },
                   {
                       "path":  "scripts/validate_public_release.py",
-                      "bytes":  8057,
-                      "sha256":  "bc12606effd0279ceed40cb0bf997a95349af120b3f3ea0c8b6bd140117296e3"
+                      "bytes":  8199,
+                      "sha256":  "1d329045c7ea07f81fa36f23785322337fed95a48b60c1bdb029b081ab08fd8d"
                   },
                   {
                       "path":  "scripts/validate_quest_spec.py",
@@ -1285,8 +1285,8 @@
                   },
                   {
                       "path":  "tests/test_public_release_tools.py",
-                      "bytes":  2372,
-                      "sha256":  "f46749d09aaf8a7fc1a5e0bafd5340c713353f369213f810350e643172796bed"
+                      "bytes":  2944,
+                      "sha256":  "91948731ea12b2bd8719826f916ab80d3dc403e51c2b06a67dcb45a5563cffb5"
                   },
                   {
                       "path":  "tests/test_validate_accessibility_localization.py",

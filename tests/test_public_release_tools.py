@@ -15,6 +15,16 @@ def load(name: str, rel: str):
 
 
 class PublicReleaseValidatorTests(unittest.TestCase):
+    def test_relative_files_ignore_git_metadata(self):
+        mod = load("validate_public_release_git", "scripts/validate_public_release.py")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / ".git/objects").mkdir(parents=True)
+            (root / ".git/objects/sample").write_bytes(b"\x00\xff")
+            (root / "README.md").write_text("release", encoding="utf-8")
+            relative = [path.relative_to(root).as_posix() for path in mod._relative_files(root)]
+            self.assertEqual(["README.md"], relative)
+
     def test_public_release_has_required_files_and_no_forbidden_files(self):
         import shutil
         for cache in ROOT.rglob("__pycache__"):

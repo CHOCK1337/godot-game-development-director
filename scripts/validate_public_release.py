@@ -52,7 +52,8 @@ FORBIDDEN_NAMES = {
     "id_rsa",
     "id_ed25519",
 }
-FORBIDDEN_PARTS = {".git", ".godot", "__pycache__", ".pytest_cache", ".mypy_cache"}
+IGNORED_SCAN_PARTS = {".git"}
+FORBIDDEN_PARTS = {".godot", "__pycache__", ".pytest_cache", ".mypy_cache"}
 FORBIDDEN_SUFFIXES = {".pyc", ".pyo", ".pem", ".key", ".p12", ".pfx"}
 
 # Keep these patterns narrow enough to avoid flagging documentation placeholders.
@@ -72,7 +73,11 @@ def _read_text(path: Path) -> str:
 
 
 def _relative_files(root: Path) -> list[Path]:
-    return sorted(p for p in root.rglob("*") if p.is_file())
+    return sorted(
+        path
+        for path in root.rglob("*")
+        if path.is_file() and not any(part in IGNORED_SCAN_PARTS for part in path.relative_to(root).parts)
+    )
 
 
 def _validate_skill(path: Path, errors: list[str]) -> None:
