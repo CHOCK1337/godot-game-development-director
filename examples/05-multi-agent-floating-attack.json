@@ -1,0 +1,25 @@
+{
+  "dimension": "3d",
+  "action_tags": [
+    "walk",
+    "turn",
+    "attack"
+  ],
+  "symptoms": [
+    "foot_sliding",
+    "stiff_impact",
+    "visual_ai_taste"
+  ],
+  "technical_tags": [
+    "AnimationTree",
+    "CharacterBody"
+  ],
+  "asset_tags": [
+    "character_animation",
+    "vfx"
+  ],
+  "needs_godot_implementation": true,
+  "reference_gap": false,
+  "evidence_quality": "timestamped",
+  "multiple_sources": true
+}

@@ -1,0 +1,20 @@
+name: godot-motion-director
+version: 4.0.0
+purpose: motion-only specialist entry within Godot Game Feel Director
+system_prompt_file: godot-motion-director.md
+skill: directing-godot-game-feel
+recommended_inputs:
+  - media_or_frame_notes
+  - action_type
+  - godot_version
+  - dimension_2d_or_3d
+  - frame_rate_and_duration
+  - gameplay_timing_and_cancel_rules
+  - scene_tree_and_animation_nodes
+output_contract: review-contract.json
+policies:
+  separate_observation_from_inference: true
+  prioritize_contact_and_weight: true
+  no_random_noise_as_primary_fix: true
+  no_full_time_ik_by_default: true
+  handoff_cross_domain_issues_to_orchestrator: true

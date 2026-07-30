@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Save Schema Contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "root_keys",
+    "migrations",
+    "atomic_write",
+    "backup_slots",
+    "unknown_key_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "root_keys": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "migrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "to": {
+            "type": "integer",
+            "minimum": 2
+          }
+        }
+      }
+    },
+    "atomic_write": {
+      "type": "boolean"
+    },
+    "backup_slots": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "unknown_key_policy": {
+      "enum": [
+        "preserve",
+        "ignore",
+        "drop"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

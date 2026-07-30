@@ -1,0 +1,37 @@
+name: godot-motion-swarm-v4-compat
+version: 4.0.0
+orchestrator_prompt: orchestrator.md
+skill: directing-godot-game-feel
+routing_guide: routing-table.md
+specialists:
+  evidence_intake: specialists/evidence-intake.md
+  reference_research: specialists/reference-research.md
+  locomotion_grounding: specialists/locomotion-grounding.md
+  action_dynamics: specialists/action-dynamics.md
+  acting_interaction: specialists/acting-interaction.md
+  gameplay_core_loop: specialists/gameplay-core-loop.md
+  systems_economy_progression: specialists/systems-economy-progression.md
+  encounter_pacing: specialists/encounter-pacing.md
+  interactive_music: specialists/interactive-music.md
+  godot_audio_integration: specialists/godot-audio-integration.md
+  godot_integration: specialists/godot-integration.md
+  asset_style: specialists/asset-style.md
+  playtest_analysis: specialists/playtest-analysis.md
+  qa_acceptance: specialists/qa-acceptance.md
+execution:
+  default_mode: parallel_lite
+  max_parallel_specialists: 6
+  qa_runs_after_synthesis: true
+  playtest_requires_data_or_test_plan: true
+  shared_file_writes_by_specialists: false
+  orchestrator_owns_final_output: true
+fallbacks:
+  parallel_unavailable: workflows/sequential-fallback.md
+  agents_unavailable: workflows/manual-no-agent.md
+contracts:
+  specialist: specialist-report.schema.json
+  dispatch_plan: dispatch-plan.schema.json
+  final_review: review-contract.json
+  gameplay_spec: gameplay-spec.schema.json
+  music_state_map: music-state-map.schema.json
+  event_contract: event-contract.schema.json

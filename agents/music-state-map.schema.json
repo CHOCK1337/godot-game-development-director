@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Interactive Music State Map",
+  "type": "object",
+  "required": [
+    "default_state",
+    "states",
+    "transitions",
+    "buses"
+  ],
+  "properties": {
+    "default_state": {
+      "type": "string"
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "purpose",
+          "bpm",
+          "meter",
+          "min_hold_seconds",
+          "layers"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "bpm": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "meter": {
+            "type": "string"
+          },
+          "min_hold_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "layers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "trigger",
+          "quantization",
+          "cooldown_seconds"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "quantization": {
+            "enum": [
+              "immediate",
+              "beat",
+              "bar",
+              "phrase",
+              "end"
+            ]
+          },
+          "cooldown_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "stinger": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "buses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "fallback_state": {
+      "type": "string"
+    }
+  }
+}

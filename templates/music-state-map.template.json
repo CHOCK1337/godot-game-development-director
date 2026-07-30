@@ -1,0 +1,23 @@
+{
+  "default_state": "exploration_low",
+  "fallback_state": "exploration_low",
+  "buses": [
+    "Music",
+    "SFX",
+    "Dialogue"
+  ],
+  "states": [
+    {
+      "id": "exploration_low",
+      "purpose": "leave space for navigation and ambience",
+      "bpm": 96,
+      "meter": "4/4",
+      "min_hold_seconds": 8,
+      "layers": [
+        "pulse",
+        "texture"
+      ]
+    }
+  ],
+  "transitions": []
+}

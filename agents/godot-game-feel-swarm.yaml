@@ -1,0 +1,60 @@
+name: godot-game-content-team
+version: 6.0.0
+orchestrator_prompt: orchestrator.md
+skill: directing-godot-game-feel
+routing_guide: routing-table.md
+specialists:
+  evidence_intake: specialists/evidence-intake.md
+  reference_research: specialists/reference-research.md
+  content_production_scope: specialists/content-production-scope.md
+  locomotion_grounding: specialists/locomotion-grounding.md
+  action_dynamics: specialists/action-dynamics.md
+  acting_interaction: specialists/acting-interaction.md
+  gameplay_core_loop: specialists/gameplay-core-loop.md
+  systems_economy_progression: specialists/systems-economy-progression.md
+  encounter_pacing: specialists/encounter-pacing.md
+  level_design_architecture: specialists/level-design-architecture.md
+  balance_difficulty: specialists/balance-difficulty.md
+  procedural_generation_randomness: specialists/procedural-generation-randomness.md
+  replayability_run_variation: specialists/replayability-run-variation.md
+  narrative_quest_cinematics: specialists/narrative-quest-cinematics.md
+  npc_ai_simulation: specialists/npc-ai-simulation.md
+  gameplay_camera_composition: specialists/gameplay-camera-composition.md
+  asset_style: specialists/asset-style.md
+  technical_art_rendering: specialists/technical-art-rendering.md
+  interactive_music: specialists/interactive-music.md
+  sound_design_voice_mix: specialists/sound-design-voice-mix.md
+  godot_audio_integration: specialists/godot-audio-integration.md
+  ux_accessibility_localization: specialists/ux-accessibility-localization.md
+  content_architecture_save_tools: specialists/content-architecture-save-tools.md
+  godot_integration: specialists/godot-integration.md
+  playtest_analysis: specialists/playtest-analysis.md
+  content_qa_automation: specialists/content-qa-automation.md
+  qa_acceptance: specialists/qa-acceptance.md
+execution:
+  default_mode: parallel_lite
+  max_parallel_specialists: 6
+  split_large_swarms_into_waves: true
+  scope_gate_for_multi_department_content: true
+  content_qa_runs_after_synthesis: true
+  qa_runs_after_content_qa: true
+  shared_file_writes_by_specialists: false
+  orchestrator_owns_final_output: true
+fallbacks:
+  parallel_unavailable: workflows/sequential-fallback.md
+  agents_unavailable: workflows/manual-no-agent.md
+contracts:
+  specialist: specialist-report.schema.json
+  dispatch_plan: dispatch-plan.schema.json
+  final_review: review-contract.json
+  gameplay_spec: gameplay-spec.schema.json
+  music_state_map: music-state-map.schema.json
+  event_contract: event-contract.schema.json
+  level_spec: level-spec.schema.json
+  balance_model: balance-model.schema.json
+  generator_spec: generator-spec.schema.json
+  quest_spec: quest-spec.schema.json
+  npc_ai_spec: npc-ai-spec.schema.json
+  content_budget: content-budget.schema.json
+  accessibility_localization: accessibility-localization.schema.json
+  save_schema: save-schema.schema.json

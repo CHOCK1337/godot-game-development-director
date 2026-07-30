@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Godot generated/imported files
+.godot/
+.import/
+*.translation
+export_credentials.cfg
+
+# Credentials and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated release artifacts
+dist/
+release-build/
+
+# Local reports
+coverage/
+*.log

@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "event_id": "combat.hit.confirmed",
+      "producer": "CombatResolver",
+      "timing": "after authoritative collision and damage validation",
+      "payload": {
+        "strength": "light|heavy",
+        "position": "Vector3",
+        "target_id": "string"
+      },
+      "consumers": [
+        "animation",
+        "vfx",
+        "sfx",
+        "camera",
+        "ui",
+        "telemetry"
+      ],
+      "dedupe": "attack_instance_id + target_id",
+      "fallback": "damage and state change remain authoritative without presentation consumers"
+    },
+    {
+      "event_id": "encounter.intensity.changed",
+      "producer": "EncounterDirector",
+      "timing": "after threshold hysteresis and minimum hold",
+      "payload": {
+        "level": "low|medium|high",
+        "reason": "string"
+      },
+      "consumers": [
+        "music",
+        "ambience",
+        "ui",
+        "telemetry"
+      ],
+      "dedupe": "emit only when stable level changes",
+      "fallback": "keep current music or use exploration fallback"
+    },
+    {
+      "event_id": "boss.phase.changed",
+      "producer": "BossStateMachine",
+      "timing": "after phase rule state is committed",
+      "payload": {
+        "phase": "integer"
+      },
+      "consumers": [
+        "animation",
+        "music",
+        "vfx",
+        "camera",
+        "ui",
+        "checkpoint",
+        "telemetry"
+      ],
+      "dedupe": "boss_instance_id + phase",
+      "fallback": "boss rules continue even if presentation consumer fails"
+    }
+  ]
+}

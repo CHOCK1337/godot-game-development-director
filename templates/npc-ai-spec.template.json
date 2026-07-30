@@ -1,0 +1,57 @@
+{
+  "agent_id": "archive_guard",
+  "initial_state": "patrol",
+  "states": [
+    "patrol",
+    "investigate",
+    "search",
+    "combat",
+    "return_to_post"
+  ],
+  "transitions": [
+    {
+      "from": "patrol",
+      "to": "investigate",
+      "trigger": "heard_noise"
+    },
+    {
+      "from": "investigate",
+      "to": "search",
+      "trigger": "stimulus_unconfirmed"
+    },
+    {
+      "from": "investigate",
+      "to": "combat",
+      "trigger": "target_confirmed"
+    },
+    {
+      "from": "search",
+      "to": "return_to_post",
+      "trigger": "search_timeout"
+    },
+    {
+      "from": "combat",
+      "to": "search",
+      "trigger": "target_lost"
+    },
+    {
+      "from": "return_to_post",
+      "to": "patrol",
+      "trigger": "post_reached"
+    }
+  ],
+  "perception": {
+    "sight": true,
+    "hearing": true,
+    "memory_seconds": 8.0
+  },
+  "fallback_state": "return_to_post",
+  "debug_fields": [
+    "state",
+    "reason",
+    "target",
+    "last_stimulus",
+    "path_status",
+    "utility_scores"
+  ]
+}

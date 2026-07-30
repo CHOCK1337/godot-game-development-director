@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NPC AI Spec",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "initial_state",
+    "states",
+    "transitions",
+    "perception",
+    "fallback_state",
+    "debug_fields"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "initial_state": {
+      "type": "string"
+    },
+    "states": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "trigger"
+        ],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "perception": {
+      "type": "object"
+    },
+    "fallback_state": {
+      "type": "string"
+    },
+    "debug_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

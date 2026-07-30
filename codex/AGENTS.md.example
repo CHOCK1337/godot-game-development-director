@@ -1,0 +1,17 @@
+# Godot Game Content Team Workflow
+
+When work concerns Godot motion, gameplay, levels, balance, procedural generation, random runs, narrative, quests, NPC AI, camera, rendering, sound, voice, music, VFX, UI, accessibility, localization, save data, content tools, or AI-looking generated assets:
+
+1. Automatically load and follow the root `directing-godot-game-feel` Skill. Do not require the user to type `@agent` or name specialists.
+2. Triage before editing and run `scripts/build_dispatch_plan.py` when the request spans more than one domain.
+3. Select the smallest relevant specialist set; do not spawn all 27 specialists.
+4. For multi-department content, establish scope and Must/Should/Could/Won't before adding features.
+5. Delegate independent read-heavy analysis in parallel only when supported.
+6. Wave 1 owns rules/state/contracts; Wave 2 owns presentation/integration. Specialists do not concurrently edit shared `.tscn`, `.tres`, `.gd`, Resources, quest graphs, save schemas or content tables.
+7. The main agent owns synthesis, final file edits and verification.
+8. Camera, SFX, VFX, UI and BGM consume authoritative gameplay/quest events; they do not infer or own rule truth.
+9. Use stable content IDs, versioned save schemas and sequential migrations.
+10. Measure rendering/audio budgets; do not claim optimization without profiler evidence.
+11. Include remappable input, subtitles, reduced-motion and localization expansion in relevant work.
+12. Run Content QA after synthesis and QA Acceptance last.
+13. Do not route to publishing, store, rating, marketing, legal, privacy, LiveOps or online-service work in this package.

@@ -1,0 +1,111 @@
+{
+  "default_state": "exploration_low",
+  "fallback_state": "exploration_low",
+  "buses": [
+    "Music",
+    "SFX",
+    "Dialogue",
+    "UI",
+    "Ambience"
+  ],
+  "states": [
+    {
+      "id": "exploration_low",
+      "purpose": "preserve navigation clarity and world ambience",
+      "bpm": 96,
+      "meter": "4/4",
+      "min_hold_seconds": 8,
+      "layers": [
+        "texture",
+        "low_pulse"
+      ]
+    },
+    {
+      "id": "combat_medium",
+      "purpose": "signal sustained combat pressure without masking telegraphs",
+      "bpm": 96,
+      "meter": "4/4",
+      "min_hold_seconds": 6,
+      "layers": [
+        "texture",
+        "low_pulse",
+        "percussion",
+        "bass"
+      ]
+    },
+    {
+      "id": "combat_high",
+      "purpose": "mark multi-threat peak or boss pressure",
+      "bpm": 96,
+      "meter": "4/4",
+      "min_hold_seconds": 8,
+      "layers": [
+        "texture",
+        "low_pulse",
+        "percussion",
+        "bass",
+        "high_ostinato"
+      ]
+    },
+    {
+      "id": "victory_release",
+      "purpose": "confirm encounter resolution then release tension",
+      "bpm": 96,
+      "meter": "4/4",
+      "min_hold_seconds": 4,
+      "layers": [
+        "resolution_pad"
+      ]
+    }
+  ],
+  "transitions": [
+    {
+      "from": "exploration_low",
+      "to": "combat_medium",
+      "trigger": "encounter.intensity.stable_medium",
+      "quantization": "bar",
+      "cooldown_seconds": 4,
+      "stinger": "combat_enter"
+    },
+    {
+      "from": "combat_medium",
+      "to": "combat_high",
+      "trigger": "encounter.intensity.stable_high",
+      "quantization": "bar",
+      "cooldown_seconds": 6,
+      "stinger": null
+    },
+    {
+      "from": "combat_high",
+      "to": "combat_medium",
+      "trigger": "encounter.intensity.stable_medium",
+      "quantization": "phrase",
+      "cooldown_seconds": 8,
+      "stinger": null
+    },
+    {
+      "from": "combat_medium",
+      "to": "victory_release",
+      "trigger": "encounter.resolved",
+      "quantization": "bar",
+      "cooldown_seconds": 2,
+      "stinger": "victory_confirm"
+    },
+    {
+      "from": "combat_high",
+      "to": "victory_release",
+      "trigger": "encounter.resolved",
+      "quantization": "bar",
+      "cooldown_seconds": 2,
+      "stinger": "victory_confirm"
+    },
+    {
+      "from": "victory_release",
+      "to": "exploration_low",
+      "trigger": "music.release.completed",
+      "quantization": "end",
+      "cooldown_seconds": 0,
+      "stinger": null
+    }
+  ]
+}

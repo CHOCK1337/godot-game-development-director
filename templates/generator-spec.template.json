@@ -1,0 +1,78 @@
+{
+  "generator_id": "level_generator_v1",
+  "content_type": "room_graph",
+  "seed_policy": {
+    "deterministic": true,
+    "record_seed": true,
+    "record_state": true,
+    "streams": [
+      "layout",
+      "encounter",
+      "loot",
+      "decoration"
+    ]
+  },
+  "representation": "typed_room_graph",
+  "hard_invariants": [
+    {
+      "id": "reachable_goal",
+      "description": "start 必须可达 goal"
+    },
+    {
+      "id": "safe_spawn",
+      "description": "spawn 周围不存在立即伤害"
+    }
+  ],
+  "generation_pipeline": [
+    "sample_skeleton",
+    "assign_roles",
+    "validate",
+    "repair",
+    "score_soft_goals",
+    "decorate",
+    "instantiate"
+  ],
+  "validation": {
+    "checks": [
+      "reachable_goal",
+      "safe_spawn"
+    ],
+    "max_attempts": 12
+  },
+  "repair_policy": [
+    "connect_unreachable_goal",
+    "move_hazard_from_spawn"
+  ],
+  "expressive_range_metrics": [
+    "linearity",
+    "branching",
+    "combat_density",
+    "recovery_spacing"
+  ],
+  "fallbacks": [
+    "load_safe_authored_layout"
+  ],
+  "random_tables": [
+    {
+      "id": "room_roles",
+      "policy": {
+        "history_size": 2,
+        "pity_after": 6
+      },
+      "entries": [
+        {
+          "id": "combat",
+          "weight": 5
+        },
+        {
+          "id": "reward",
+          "weight": 2
+        },
+        {
+          "id": "recovery",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

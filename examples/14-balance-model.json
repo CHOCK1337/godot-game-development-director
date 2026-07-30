@@ -1,0 +1,83 @@
+{
+  "target_experience": "新手能识别失败原因，熟练玩家需要调整路线和目标优先级，高手不能只靠数值碾压",
+  "skill_bands": [
+    "novice",
+    "competent",
+    "expert"
+  ],
+  "challenge_dimensions": [
+    "information",
+    "decision",
+    "execution",
+    "resource"
+  ],
+  "metrics": [
+    {
+      "id": "completion_rate",
+      "target_min": 0.5,
+      "target_max": 0.75,
+      "segment": "competent"
+    },
+    {
+      "id": "boss_resource_remaining",
+      "target_min": 0.1,
+      "target_max": 0.45,
+      "segment": "competent"
+    }
+  ],
+  "tuning_parameters": [
+    {
+      "id": "room_threat_budget",
+      "min": 2,
+      "max": 12,
+      "default": 6,
+      "step": 1
+    },
+    {
+      "id": "recovery_drop_weight",
+      "min": 0.2,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 0.1
+    }
+  ],
+  "difficulty_curve": [
+    {
+      "stage": "orientation",
+      "challenge_budget": 2
+    },
+    {
+      "stage": "combat_a",
+      "challenge_budget": 6
+    },
+    {
+      "stage": "recovery",
+      "challenge_budget": 3
+    },
+    {
+      "stage": "boss",
+      "challenge_budget": 9
+    }
+  ],
+  "adaptation_policy": {
+    "enabled": true,
+    "signals": [
+      "two_consecutive_room_failures",
+      "low_resource_at_checkpoint"
+    ],
+    "allowed_adjustments": [
+      "recovery_drop_weight",
+      "spawn_frequency"
+    ],
+    "cooldown_s": 60,
+    "max_step": 1,
+    "player_respect": "不改变敌人攻击时序、碰撞体和基础伤害；Boss 尝试期间锁定设置"
+  },
+  "playtest_hypotheses": [
+    {
+      "hypothesis": "competent 玩家完成率和 Boss 前资源落入目标区间",
+      "measure": "completion_rate and boss_resource_remaining by skill_band",
+      "falsifier": "任一指标连续两轮测试超出目标范围"
+    }
+  ]
+}

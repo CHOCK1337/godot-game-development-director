@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Godot Game Feel Agent Dispatch Plan",
+  "type": "object",
+  "required": [
+    "mode",
+    "preprocessing",
+    "parallel_specialists",
+    "postprocessing",
+    "reasons"
+  ],
+  "properties": {
+    "mode": {
+      "enum": [
+        "single",
+        "parallel_lite",
+        "parallel_full",
+        "sequential_fallback",
+        "manual"
+      ]
+    },
+    "preprocessing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "parallel_specialists": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "postprocessing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "shared_dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

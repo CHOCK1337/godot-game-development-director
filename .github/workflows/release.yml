@@ -1,0 +1,83 @@
+name: Build or publish release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Semantic version tag, for example v0.1.0-alpha"
+        required: true
+        default: "v0.1.0-alpha"
+      publish:
+        description: "Create or update a GitHub Release after validation"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate repository
+        run: |
+          python scripts/validate_public_release.py
+          python tests/validate_package.py
+          python -m unittest discover -s tests -v
+
+      - name: Build release assets
+        run: python scripts/build_release.py --version "${{ inputs.version }}" --clean
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: godot-game-development-director-${{ inputs.version }}
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS
+          if-no-files-found: error
+
+      - name: Create or update GitHub Release
+        if: ${{ inputs.publish }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          asset="dist/godot-game-development-director-${VERSION}.zip"
+          prerelease=()
+          case "$VERSION" in
+            *-alpha*|*-beta*|*-rc*) prerelease+=(--prerelease) ;;
+          esac
+
+          if ! git rev-parse "$VERSION" >/dev/null 2>&1; then
+            git tag -a "$VERSION" -m "Godot Game Development Director $VERSION"
+            git push origin "$VERSION"
+          fi
+
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            gh release upload "$VERSION" "$asset" dist/SHA256SUMS --clobber
+          else
+            gh release create "$VERSION" "$asset" dist/SHA256SUMS \
+              --verify-tag \
+              --title "Godot Game Development Director $VERSION" \
+              --notes-file RELEASE_NOTES.md \
+              --latest=false \
+              "${prerelease[@]}"
+          fi

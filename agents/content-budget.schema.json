@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Content Budget",
+  "type": "object",
+  "required": [
+    "platform_profile",
+    "budgets",
+    "measurements"
+  ],
+  "properties": {
+    "platform_profile": {
+      "type": "string"
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    }
+  },
+  "additionalProperties": true
+}

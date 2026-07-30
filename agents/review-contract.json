@@ -1,0 +1,362 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Godot Game Feel Review",
+  "type": "object",
+  "required": [
+    "verdict",
+    "routing_summary",
+    "observations",
+    "phase_or_structure_map",
+    "priority_fixes",
+    "conflicts",
+    "godot_plan",
+    "acceptance_tests",
+    "qa_gate",
+    "unknowns"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string"
+    },
+    "routing_summary": {
+      "type": "object",
+      "required": [
+        "mode",
+        "agents_run"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "single",
+            "parallel_lite",
+            "parallel_full",
+            "sequential_fallback",
+            "manual"
+          ]
+        },
+        "agents_run": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "agents_skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "agent",
+              "reason"
+            ],
+            "properties": {
+              "agent": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "range",
+          "observation",
+          "severity",
+          "confidence"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "range": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reported_by": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "phase_or_structure_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "range": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "present",
+              "weak",
+              "missing",
+              "unknown"
+            ]
+          },
+          "issue": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "priority_fixes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "change",
+          "reason",
+          "responsibility_layer",
+          "implementation",
+          "cost"
+        ],
+        "properties": {
+          "change": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "responsibility_layer": {
+            "enum": [
+              "source_asset",
+              "DCC",
+              "import",
+              "animation_graph",
+              "gameplay_design",
+              "systems_design",
+              "level_design",
+              "audio_content",
+              "audio_runtime",
+              "runtime",
+              "presentation",
+              "telemetry",
+              "mixed",
+              "balance_design",
+              "procedural_generation",
+              "content_production",
+              "narrative_design",
+              "quest_design",
+              "npc_ai",
+              "camera_design",
+              "technical_art",
+              "sound_design",
+              "ux_accessibility",
+              "localization",
+              "content_architecture",
+              "save_system",
+              "content_qa"
+            ]
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "cost": {
+            "enum": [
+              "small",
+              "medium",
+              "large"
+            ]
+          },
+          "risk": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "issue",
+          "positions",
+          "decision",
+          "basis"
+        ],
+        "properties": {
+          "issue": {
+            "type": "string"
+          },
+          "positions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decision": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string"
+          },
+          "unresolved": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "godot_plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "action",
+          "required"
+        ],
+        "properties": {
+          "area": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "generation_brief": {
+      "type": "object"
+    },
+    "acceptance_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "qa_gate": {
+      "type": "object",
+      "required": [
+        "status",
+        "blocking_issues"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pass",
+            "revise"
+          ]
+        },
+        "blocking_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_blocking_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "event_contract": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "gameplay_spec": {
+      "type": "object"
+    },
+    "music_spec": {
+      "type": "object"
+    },
+    "level_spec": {
+      "type": "object"
+    },
+    "balance_model": {
+      "type": "object"
+    },
+    "generator_spec": {
+      "type": "object"
+    },
+    "quest_spec": {
+      "type": "object"
+    },
+    "npc_ai_spec": {
+      "type": "object"
+    },
+    "content_budget": {
+      "type": "object"
+    },
+    "accessibility_localization_spec": {
+      "type": "object"
+    },
+    "save_schema": {
+      "type": "object"
+    },
+    "camera_spec": {
+      "type": "object"
+    },
+    "sound_cue_sheet": {
+      "type": "object"
+    },
+    "content_scope": {
+      "type": "object"
+    },
+    "content_qa_gate": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "pass",
+            "revise"
+          ]
+        },
+        "blocking_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

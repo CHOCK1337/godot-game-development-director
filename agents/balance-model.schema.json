@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Balance Model",
+  "type": "object",
+  "required": [
+    "target_experience",
+    "skill_bands",
+    "challenge_dimensions",
+    "metrics",
+    "tuning_parameters",
+    "difficulty_curve",
+    "adaptation_policy",
+    "playtest_hypotheses"
+  ],
+  "properties": {
+    "target_experience": {
+      "type": "string",
+      "minLength": 10
+    },
+    "skill_bands": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "challenge_dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "information",
+          "decision",
+          "execution",
+          "resource",
+          "coordination"
+        ]
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "target_min",
+          "target_max",
+          "segment"
+        ]
+      }
+    },
+    "tuning_parameters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "min",
+          "max",
+          "default",
+          "step"
+        ]
+      }
+    },
+    "difficulty_curve": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "stage",
+          "challenge_budget"
+        ]
+      }
+    },
+    "adaptation_policy": {
+      "type": "object",
+      "required": [
+        "enabled"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "signals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_adjustments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cooldown_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_step": {
+          "type": "number",
+          "minimum": 0
+        },
+        "player_respect": {
+          "type": "string"
+        }
+      }
+    },
+    "playtest_hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "hypothesis",
+          "measure",
+          "falsifier"
+        ]
+      }
+    }
+  }
+}

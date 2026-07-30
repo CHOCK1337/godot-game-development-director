@@ -1,0 +1,32 @@
+{
+  "manifest_format": "godot-game-development-director/1",
+  "standard_notice": "This manifest is project-specific and is not part of the Agent Skills standard.",
+  "package": {
+    "name": "godot-game-development-director",
+    "version": "0.1.0-alpha",
+    "license": "Apache-2.0",
+    "maturity": "alpha",
+    "public_release": true
+  },
+  "components": {
+    "root_skill": "SKILL.md",
+    "module_skills_directory": "skills",
+    "specialists_directory": "agents/specialists",
+    "orchestrator": "agents/orchestrator.md",
+    "routing_table": "agents/routing-table.md",
+    "codex_policy_example": "codex/AGENTS.md.example"
+  },
+  "capabilities": {
+    "specialist_agents": 27,
+    "module_skills": 8,
+    "engine_focus": ["Godot 4.x"],
+    "planned_adapters": ["engine-independent core", "Unity", "Unreal Engine"]
+  },
+  "validation": {
+    "public_release_validator": "scripts/validate_public_release.py",
+    "package_validator": "tests/validate_package.py",
+    "unit_tests": "python -m unittest discover -s tests -v",
+    "release_builder": "scripts/build_release.py",
+    "godot_validation": "Static only in this release build; live engine compilation is required."
+  }
+}

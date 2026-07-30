@@ -1,0 +1,48 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate public release structure
+        run: python scripts/validate_public_release.py
+
+      - name: Validate original package contract
+        run: python tests/validate_package.py
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Build and verify test release asset
+        run: |
+          python scripts/build_release.py --version v0.0.0-ci --output release-build --clean
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          archive = next(Path("release-build").glob("*.zip"))
+          with zipfile.ZipFile(archive) as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise SystemExit(f"CRC failure: {bad}")
+          print(archive)
+          PY

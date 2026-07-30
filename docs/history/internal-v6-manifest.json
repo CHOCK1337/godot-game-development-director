@@ -1,0 +1,1235 @@
+{
+  "package": "godot-game-development-director-v6-content-team",
+  "version": "6.0.0",
+  "specialists": 27,
+  "skills": 8,
+  "scope": "game content development; excludes publishing/store/legal/privacy/liveops/online services",
+  "file_count_excluding_manifest": 245,
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1561,
+      "sha256": "0d11c39ea92d0b68b66ac84a75c9726f65cdca1224eb28cf7fb45b006b78dcd7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3682,
+      "sha256": "565fe28e4feb4833fe95d787898f1b898b5731a3a9f8e35b80a96e6d15a4fcbd"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 6092,
+      "sha256": "799cd23e4a8fa1357157c43b71024f1858abab143db390a96be3c4d8f9271fe4"
+    },
+    {
+      "path": "SOURCES.md",
+      "bytes": 5978,
+      "sha256": "f4c6692d483a94cc6f75d896d31c483bc0356e3dd370764373e83b84a8fa8ff5"
+    },
+    {
+      "path": "agents/accessibility-localization.schema.json",
+      "bytes": 1028,
+      "sha256": "d954e36cc786dca3c37b9513fab34e3b7667a73fd75871aa1dd5ea5a38399dfd"
+    },
+    {
+      "path": "agents/balance-model.schema.json",
+      "bytes": 2428,
+      "sha256": "ca160ff9c4575f22ca33b53a5682f10ea6616ec5b6b5cb621728603ec90cd9fc"
+    },
+    {
+      "path": "agents/content-budget.schema.json",
+      "bytes": 577,
+      "sha256": "5f7dc3e72ffe1ae8de57b265b2e42aaf790e2d6fb7c5f770088882a97d2d5493"
+    },
+    {
+      "path": "agents/dispatch-plan.schema.json",
+      "bytes": 1083,
+      "sha256": "c0547c9d03ba83220e7b2204b6b661e4ba085bc9b75c484f32e85ca4093f5b71"
+    },
+    {
+      "path": "agents/event-contract.schema.json",
+      "bytes": 1131,
+      "sha256": "22edd2764cd732b69ee2fd11cab692fe36066e4a2ee516cff11b3553e09dbe3d"
+    },
+    {
+      "path": "agents/gameplay-spec.schema.json",
+      "bytes": 3009,
+      "sha256": "06ab0ee00c0f9c549ed462e638989c776e0fa170ab001fbc3a2d87d72a123278"
+    },
+    {
+      "path": "agents/generator-spec.schema.json",
+      "bytes": 2496,
+      "sha256": "4ff9fb532a474f2f30644281fee189d5f40fe429d59b2ec6909501bbbb67180a"
+    },
+    {
+      "path": "agents/godot-game-feel-swarm.yaml",
+      "bytes": 2889,
+      "sha256": "6726ace245c14117b78fe1b5d90753d5b05b0e10fa1fdb729b438d6621125abf"
+    },
+    {
+      "path": "agents/godot-motion-director.md",
+      "bytes": 1854,
+      "sha256": "8c582fe874093697c142ae52aef1e491ebce0d30ee34e65e3289dd817fc958a1"
+    },
+    {
+      "path": "agents/godot-motion-director.yaml",
+      "bytes": 649,
+      "sha256": "e234fad8dc3977f4b1eece6110e40ec32a68e6697d23df8b7863a2aa91d4e26f"
+    },
+    {
+      "path": "agents/godot-motion-swarm.yaml",
+      "bytes": 1553,
+      "sha256": "6e65659ea652dbcab9c46757d5603de823e04fb5bfd8015bfe24974b0fbe140f"
+    },
+    {
+      "path": "agents/level-spec.schema.json",
+      "bytes": 3400,
+      "sha256": "54b22ecb971b3a4b93026cb4bf12ab1e628056c3c5c32e9faceac9b5e073c91b"
+    },
+    {
+      "path": "agents/music-state-map.schema.json",
+      "bytes": 2240,
+      "sha256": "72bc0fc9c870b89b41fe28de1c0ee10d25b67cafbe215ecba2e28690106ad3dc"
+    },
+    {
+      "path": "agents/npc-ai-spec.schema.json",
+      "bytes": 1185,
+      "sha256": "735a630e95c363aa68d754ad8f9f5026c8f47112885f0b9c75170b7923d40f44"
+    },
+    {
+      "path": "agents/orchestrator.md",
+      "bytes": 3693,
+      "sha256": "aa3f6eff421aa3d8c02968ca6831310f0e5b37e0bf774b3a5dda9c72e31e3ce9"
+    },
+    {
+      "path": "agents/portable-orchestrator-prompt.md",
+      "bytes": 948,
+      "sha256": "fa30571c86013f8505d3ca299cdf12d3e5aac01d3d4521ed015249879ba0c367"
+    },
+    {
+      "path": "agents/portable-subagent-prompt.md",
+      "bytes": 1302,
+      "sha256": "e6f82f062c95ab5addd1d4088c4a6d831c32d35f4bef30d4e3c4bbb64dd0dd03"
+    },
+    {
+      "path": "agents/quest-spec.schema.json",
+      "bytes": 1808,
+      "sha256": "0594bb0fa81bf3e3c70831810b9ba9df38a9798dccdc112e02073f678cd9b2a9"
+    },
+    {
+      "path": "agents/review-contract.json",
+      "bytes": 7377,
+      "sha256": "799d9319c6495979195fc924839f1f2bb276d4a175d414d0b247322e9a357fed"
+    },
+    {
+      "path": "agents/routing-table.md",
+      "bytes": 4368,
+      "sha256": "23d0a1ad7029bfd6fb5269c07f04c1ee74913884023d0371de269ffd5361d3d5"
+    },
+    {
+      "path": "agents/save-schema.schema.json",
+      "bytes": 1152,
+      "sha256": "21d3d8dce6657decb87c96aab1d0bfca46d8bc60ce57cd6c55cf39566e3db88a"
+    },
+    {
+      "path": "agents/specialist-report.schema.json",
+      "bytes": 3666,
+      "sha256": "234ef62f5e4c885df0feb962189aff4d6636b5fd55d07cdfa177b61e95077ad3"
+    },
+    {
+      "path": "agents/specialists/acting-interaction.md",
+      "bytes": 878,
+      "sha256": "55b213d96c714b59d5b55a340d58197e605837a612689769b722a266e7705775"
+    },
+    {
+      "path": "agents/specialists/action-dynamics.md",
+      "bytes": 905,
+      "sha256": "95089d6cf504804672f103b7b3988f88c792b5c3e644dca118849cb10876b054"
+    },
+    {
+      "path": "agents/specialists/asset-style.md",
+      "bytes": 966,
+      "sha256": "0ba15adae169b6b0a27443a10fccdb434ce108ee042dbf588a775615888991f4"
+    },
+    {
+      "path": "agents/specialists/balance-difficulty.md",
+      "bytes": 1293,
+      "sha256": "4421c6d980b9e872b9f8ddcb97793f1934a0d193764123b8bbc57e177eda7ef9"
+    },
+    {
+      "path": "agents/specialists/content-architecture-save-tools.md",
+      "bytes": 1212,
+      "sha256": "8c31111e681f6c332adae15277afa2124008e4f90fca896bc70fe308217bcf5d"
+    },
+    {
+      "path": "agents/specialists/content-production-scope.md",
+      "bytes": 1060,
+      "sha256": "57cc001f0edc2a8d632fc2d013c31490c9ddba2d8dbd1a8c3dbd68ded765e783"
+    },
+    {
+      "path": "agents/specialists/content-qa-automation.md",
+      "bytes": 1178,
+      "sha256": "fe67d8268b50144f7efd8193992fb87f4fbbc698bf1764ae8d9c56f8c9994a62"
+    },
+    {
+      "path": "agents/specialists/encounter-pacing.md",
+      "bytes": 703,
+      "sha256": "91e43f62f6caaec3092164047fc3e71125cd2c95cad4113d46cfdd9420f54a43"
+    },
+    {
+      "path": "agents/specialists/evidence-intake.md",
+      "bytes": 693,
+      "sha256": "5ddbf764aa932231a1c87600ea53ad301b4a8ce6f945edf6a6a34d1045c57060"
+    },
+    {
+      "path": "agents/specialists/gameplay-camera-composition.md",
+      "bytes": 1152,
+      "sha256": "cf8ce089fcc754eda48e80f30a443018e7bdbe24d52f72282794d25fdbac9779"
+    },
+    {
+      "path": "agents/specialists/gameplay-core-loop.md",
+      "bytes": 703,
+      "sha256": "d05d9b0c04a6dad3b81d1e004b4c2d2db65252e599e202396d71ca1272394599"
+    },
+    {
+      "path": "agents/specialists/godot-audio-integration.md",
+      "bytes": 636,
+      "sha256": "dcf3d835a67bf9b3ff1da9056449a1c9965625f6d77948ffbd4a934c7c9ec1ac"
+    },
+    {
+      "path": "agents/specialists/godot-integration.md",
+      "bytes": 977,
+      "sha256": "020aab25b4d4e183bde21e915879209a0dc9e694b3dbe4a4764039be234a9bc2"
+    },
+    {
+      "path": "agents/specialists/interactive-music.md",
+      "bytes": 738,
+      "sha256": "538ff6cdbea21cbf38aef85f9137fb5d94efa2a8f058781a51d88b3eeeb94352"
+    },
+    {
+      "path": "agents/specialists/level-design-architecture.md",
+      "bytes": 1523,
+      "sha256": "2ac11c6b81b71ad3cc5e685d864979ccc31a8fd1d0d69d9cef5c6f1504ee7816"
+    },
+    {
+      "path": "agents/specialists/locomotion-grounding.md",
+      "bytes": 1134,
+      "sha256": "984832c839f86edacc374fbdee118e683f466aa2f1a8687f1d74c826986fc0c1"
+    },
+    {
+      "path": "agents/specialists/narrative-quest-cinematics.md",
+      "bytes": 1220,
+      "sha256": "5b6a5e7f08c10bfd5c145823ff7655feea904e473c75e0d61930aa3bcdf7ff8f"
+    },
+    {
+      "path": "agents/specialists/npc-ai-simulation.md",
+      "bytes": 1222,
+      "sha256": "546664da12a9515c38e3d4856e5f28f31aa78e96d2ec0c8bc7ac9ab9be52bf88"
+    },
+    {
+      "path": "agents/specialists/playtest-analysis.md",
+      "bytes": 882,
+      "sha256": "aa32a01cde948f7a728194e215ad2e18ab783818c98a6bfb98efda179029f387"
+    },
+    {
+      "path": "agents/specialists/procedural-generation-randomness.md",
+      "bytes": 1315,
+      "sha256": "01c39d62b5bb69f247e0366fa262a2f20de75bfcf4e2efe14beace552fb369f6"
+    },
+    {
+      "path": "agents/specialists/qa-acceptance.md",
+      "bytes": 1417,
+      "sha256": "9261e19eeb08962ad579a405d500705b8ed1dedd9df1bd3ae07f44c266995c7e"
+    },
+    {
+      "path": "agents/specialists/reference-research.md",
+      "bytes": 764,
+      "sha256": "410bf377c0176fce1dd981d994726862d529c4b2c13c9414e62853790e6f5141"
+    },
+    {
+      "path": "agents/specialists/replayability-run-variation.md",
+      "bytes": 1211,
+      "sha256": "29eec78eb2825874724f0a4922bea9a614f56f40e28861151ec83abf32d7c48a"
+    },
+    {
+      "path": "agents/specialists/sound-design-voice-mix.md",
+      "bytes": 1218,
+      "sha256": "88d8b3f6d094dc6270e61eb352933eb7b1b431a3126e30077c29bfe46afdb711"
+    },
+    {
+      "path": "agents/specialists/systems-economy-progression.md",
+      "bytes": 619,
+      "sha256": "1ab6df87d8bad6ab2b1533914c55205e549cfe3a1516b3e729ad47f097607137"
+    },
+    {
+      "path": "agents/specialists/technical-art-rendering.md",
+      "bytes": 1175,
+      "sha256": "47afb922a3aa4453b8d1e563be1ed2bdcbb1e2cc57e7058129cbb129add25058"
+    },
+    {
+      "path": "agents/specialists/ux-accessibility-localization.md",
+      "bytes": 1243,
+      "sha256": "58b6882a7a3961503189d18e54634d633a7ed80adb696dbc66f4a5f3008c907a"
+    },
+    {
+      "path": "checklists/actions.md",
+      "bytes": 547,
+      "sha256": "cb9a4c8e0e8da6a644ffae25f6f7151b296672d9e9e0e3225eecda5be6e31e93"
+    },
+    {
+      "path": "checklists/balance-difficulty.md",
+      "bytes": 689,
+      "sha256": "cfd37f8b95ea517ef2ad23239fae72af8c6a555d579f81e5a665ca33101462ca"
+    },
+    {
+      "path": "checklists/content-architecture-save.md",
+      "bytes": 428,
+      "sha256": "4534452fb7c07b83938c5049ca0ba87739addf0782182b6f97d3f3e2f61b13fb"
+    },
+    {
+      "path": "checklists/content-completion-rubric.md",
+      "bytes": 432,
+      "sha256": "d4df18af00cd547c63826cc193d7dd5e6f6ed7babc173f779d9c4eef3deacc5b"
+    },
+    {
+      "path": "checklists/content-production-scope.md",
+      "bytes": 387,
+      "sha256": "cf76b87dca101fe12279d14eb5d183b6a2b203d1b34fee26f50eabab97372e5a"
+    },
+    {
+      "path": "checklists/content-qa.md",
+      "bytes": 375,
+      "sha256": "fd03cfb360aa0f7535d5d65b5be5cc438fe2e833050c039d82066288262b7905"
+    },
+    {
+      "path": "checklists/encounter-pacing.md",
+      "bytes": 494,
+      "sha256": "3b7095914bc6ded385e84b28364ce8b12a9b6d12c556820ba51b5d4c51ac4385"
+    },
+    {
+      "path": "checklists/game-feel-rubric.md",
+      "bytes": 1065,
+      "sha256": "2d864e195f2ded58abfcbb0447bccb83e8312b396e6eaf86e6c0acaf6e74d692"
+    },
+    {
+      "path": "checklists/gameplay-camera.md",
+      "bytes": 366,
+      "sha256": "82ded8b618b853f3deb548eabda61c60983786cae01a3468c80e598feb514857"
+    },
+    {
+      "path": "checklists/gameplay-core-loop.md",
+      "bytes": 484,
+      "sha256": "7bf7b94ecb056b48c3c24b729c3989beb50b85cd516dc1e0e6a6acf79db3cddd"
+    },
+    {
+      "path": "checklists/godot-2d.md",
+      "bytes": 505,
+      "sha256": "c35eda74ef0abb5c77877c99ab805a99cca087ca9cc85a81aef8cc7152047f17"
+    },
+    {
+      "path": "checklists/godot-3d.md",
+      "bytes": 764,
+      "sha256": "afc93f4ab5dc7ff0b4edad882a0640b08444470ec56a8d5a8460087959e0451e"
+    },
+    {
+      "path": "checklists/godot-audio.md",
+      "bytes": 600,
+      "sha256": "c5cb6cdeb45328b159c1b9cbdbb83d9914d0747959ead503d302917baccdc8fe"
+    },
+    {
+      "path": "checklists/intake.md",
+      "bytes": 581,
+      "sha256": "c589479a996eda56b5a652843223dda425f196842811f7584ac4feaea24fd532"
+    },
+    {
+      "path": "checklists/interactive-music.md",
+      "bytes": 600,
+      "sha256": "112fff068601d0a620e3c13b5842d05a51c5243302f6f663fab12a43c5dd9a76"
+    },
+    {
+      "path": "checklists/level-design.md",
+      "bytes": 936,
+      "sha256": "c6770b3c0e8a5624abe76008653814fc1a2bd16dfb7450d337a8180484eefeb3"
+    },
+    {
+      "path": "checklists/locomotion.md",
+      "bytes": 735,
+      "sha256": "6462fcd376aac245b660c4f40f3a5faff15957b01f48db780ee468cbb36f9421"
+    },
+    {
+      "path": "checklists/narrative-quest.md",
+      "bytes": 366,
+      "sha256": "60a69c72d4f9f6121825f376720639f2d45f3b137d808f47f2fcef556c937141"
+    },
+    {
+      "path": "checklists/npc-ai.md",
+      "bytes": 371,
+      "sha256": "7c4df2587a5b7f5daee6d025a0a7a11b929a13d63d51e1b20b54e421adf9f6ba"
+    },
+    {
+      "path": "checklists/playtest.md",
+      "bytes": 451,
+      "sha256": "f3c0cd006746593002b28bbae78ef6dad104d1a4051d39e84e66b5180bdfb25f"
+    },
+    {
+      "path": "checklists/procedural-generation.md",
+      "bytes": 782,
+      "sha256": "5fc440a8de8cd55580e29d5bdec7a4f2651ce107cb0d3e37ac2096a6830d9bfb"
+    },
+    {
+      "path": "checklists/rubric.md",
+      "bytes": 1293,
+      "sha256": "019a7aa90c013901c7273287db6f67a3740bbd3a00e5b48bad5befcaab1f67bc"
+    },
+    {
+      "path": "checklists/run-variation.md",
+      "bytes": 694,
+      "sha256": "677d0206f6502c58ebfef04a2190717342426baee581ed64f4c553c644dec90d"
+    },
+    {
+      "path": "checklists/sound-design.md",
+      "bytes": 400,
+      "sha256": "fb041088694cd823bdb83b36ce42dfd59607852cca75b54049125041f0d45553"
+    },
+    {
+      "path": "checklists/systems-economy.md",
+      "bytes": 465,
+      "sha256": "b3d1d9dfab95da7b4bf6cf56848f49b043efab505fdf3729ef7d0127504fe8f9"
+    },
+    {
+      "path": "checklists/technical-art.md",
+      "bytes": 324,
+      "sha256": "fe40228792c457ebaf0842e9fc70e62bd29fd2c223a0fdd834b20a893a7f3767"
+    },
+    {
+      "path": "checklists/ux-accessibility-localization.md",
+      "bytes": 414,
+      "sha256": "2d2cf7b703106f10d045a922adfd977100b382dd56699096ad2e1f14f41480ad"
+    },
+    {
+      "path": "codex/AGENTS.md.example",
+      "bytes": 1639,
+      "sha256": "92fb0a804bd7190e78f3a9369670fda728735e304031019deba4c809614fe4ef"
+    },
+    {
+      "path": "codex/README.md",
+      "bytes": 1100,
+      "sha256": "b61ce05b540156b90ce6f3e92439f323a8b40fd78a627b3f3ba2561f8420d8e9"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-28-content-team-v6.md",
+      "bytes": 1560,
+      "sha256": "c1ce4c0d7947a7374d1a8a3cbf71018dbf2f9e7a7075d20b40dcce900c2cc717"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-28-level-balance-randomness.md",
+      "bytes": 5376,
+      "sha256": "47132ec8e61274d5e7b511e52645d7c03ab0dc18f9c220ac774b8a8a2a8e8541"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-28-content-team-v6-design.md",
+      "bytes": 2118,
+      "sha256": "65512c8f628a83987d0fb4d5c38cbd8208e41e1498b66de54b99e202fb763e94"
+    },
+    {
+      "path": "docs/superpowers/specs/2026-07-28-level-balance-randomness-design.md",
+      "bytes": 2696,
+      "sha256": "2d54a38073ce530647b1488775e92cecb906137bcb5ce464584b7ef8a3c978f7"
+    },
+    {
+      "path": "examples/01-floating-walk.md",
+      "bytes": 1407,
+      "sha256": "5704acb253fa0112bceb93c703fd20f6b38eaad7366b35d395b7de8bed8d9546"
+    },
+    {
+      "path": "examples/02-stiff-attack.md",
+      "bytes": 938,
+      "sha256": "e9727867a602b0cb20a7be983335c34f28d7d6935c65b0c856f5d4a08d03e185"
+    },
+    {
+      "path": "examples/03-idle-interaction.md",
+      "bytes": 674,
+      "sha256": "76c9accb1faec2be3375442a50db134450e7160b135273765764387f07819184"
+    },
+    {
+      "path": "examples/04-2d-sprite-cycle.md",
+      "bytes": 522,
+      "sha256": "f7893b09bf4a2055401dd92364221da8042758d33460291bc41e0f0d450fd154"
+    },
+    {
+      "path": "examples/05-multi-agent-floating-attack.json",
+      "bytes": 425,
+      "sha256": "bfcfcc70baa6c426ab68a748dcf3302358f996c97de6e259bd8824c2a37c60b8"
+    },
+    {
+      "path": "examples/06-combat-music-gameplay-orchestration.md",
+      "bytes": 988,
+      "sha256": "a497242232531ec9e3feaf98031649e812a576db6681c3bbad10b48cb85054e1"
+    },
+    {
+      "path": "examples/07-gameplay-review.md",
+      "bytes": 758,
+      "sha256": "f08a65daeb60277c513c826c578f1a42ed9a78194a3c2a39934a9aca45d2c3c2"
+    },
+    {
+      "path": "examples/08-music-state-map.json",
+      "bytes": 2513,
+      "sha256": "12b440ed698f71e7e0f645ae0908fc4ca9b9488dd648ee5bc2da035d344c469a"
+    },
+    {
+      "path": "examples/09-playtest-events.csv",
+      "bytes": 395,
+      "sha256": "24830e5f6ce388067245752f4d2c351bbf16e7152753ee066db4a27e74841f2a"
+    },
+    {
+      "path": "examples/10-gameplay-spec.json",
+      "bytes": 2565,
+      "sha256": "e26e87e4a6654e54e75d7f42972bd2d1781c5fed8664ffc52bb0002d585a90f8"
+    },
+    {
+      "path": "examples/11-event-contract.json",
+      "bytes": 1542,
+      "sha256": "4141d1c9aa5e7f684328d53534a72bc70a4277f97780c6a7880e2ee3c3731fcf"
+    },
+    {
+      "path": "examples/12-dispatch-brief.json",
+      "bytes": 423,
+      "sha256": "c1b7f23c71ed504e65f94abbc061745f768a79286173b04274a7fc5d22227935"
+    },
+    {
+      "path": "examples/13-level-spec.json",
+      "bytes": 2428,
+      "sha256": "585c1c11facbe94d1b095eed97f848299aa02438a1b713a59a6e1a4ee5ab86a1"
+    },
+    {
+      "path": "examples/14-balance-model.json",
+      "bytes": 1821,
+      "sha256": "e46f2d36f4730285c9719792d517d1ea4a91a5d14ab9a186515fdb95e6d6f770"
+    },
+    {
+      "path": "examples/15-generator-spec.json",
+      "bytes": 2031,
+      "sha256": "019b35e177d8637060151174c599fb48ecfa5dc00eb49593940d7b850bf75668"
+    },
+    {
+      "path": "examples/16-level-runs.csv",
+      "bytes": 509,
+      "sha256": "f9233a8972dbfbd1c3e538b6c7f2e4448659118a1e706b21e3fa99a0e3c9b097"
+    },
+    {
+      "path": "examples/17-level-randomness-orchestration.md",
+      "bytes": 1310,
+      "sha256": "fd73936da2b629b0e31343e35ab3ee86d866040eed63d72c52a3697c48a14a1b"
+    },
+    {
+      "path": "examples/18-dispatch-brief-level-random.json",
+      "bytes": 497,
+      "sha256": "1d5bd6d2914b8e686a83b421a8d56e534eaef86e9f61e430cf1feb8c7855a221"
+    },
+    {
+      "path": "examples/19-random-table.json",
+      "bytes": 267,
+      "sha256": "5a8cfadae3b73efe10ce5f061c769e3d261a549cec15566b8df5783543ace434"
+    },
+    {
+      "path": "examples/20-content-milestone.md",
+      "bytes": 420,
+      "sha256": "09ab2e0f28674656d9cbf18a49e806ea1cc6f38dd923ee3cb0954eefd48c890d"
+    },
+    {
+      "path": "examples/21-quest-spec.json",
+      "bytes": 1244,
+      "sha256": "5a213c959bdd05ce1271c5f4cc5e964b036454e883bc452e0e1f5c478b8741c3"
+    },
+    {
+      "path": "examples/22-npc-ai-spec.json",
+      "bytes": 1030,
+      "sha256": "88e809c4f2d09ae232dcbcb976ab5262dfa66d0acf36904954bf361b6a4745e0"
+    },
+    {
+      "path": "examples/23-content-budget.json",
+      "bytes": 470,
+      "sha256": "6d6bfef619a484d2d28f3fd14a4cf84603e21467538a8e3c07f5f70c82c44a8f"
+    },
+    {
+      "path": "examples/24-accessibility-localization.json",
+      "bytes": 365,
+      "sha256": "220e14dbdad54a75c42740332cc6cf855c95387b7b8789ce7b989d4bfd8569a5"
+    },
+    {
+      "path": "examples/25-save-schema.json",
+      "bytes": 435,
+      "sha256": "932121bb33d03884a4b39014aeddeb9ccb0e811b54ee2d3f1c77c23f8e6cd6b2"
+    },
+    {
+      "path": "examples/26-camera-mode-plan.md",
+      "bytes": 310,
+      "sha256": "138521fb3dee087d89c45e66314f603ccdf75cd29c2763386364c443b760449c"
+    },
+    {
+      "path": "examples/27-audio-cue-sheet.md",
+      "bytes": 375,
+      "sha256": "ca45cd1e0abb37dd249ab93d77ddd4ce62405b42c5f376184c81e843b952e008"
+    },
+    {
+      "path": "examples/28-content-team-orchestration.md",
+      "bytes": 545,
+      "sha256": "5bb16cc713c68edcd05d0650f69fd472901346e96c9abdb1ff262a1a3ac27074"
+    },
+    {
+      "path": "examples/29-dispatch-brief-content-team.json",
+      "bytes": 492,
+      "sha256": "bcf594709647333c7619cc7cbafddc4fc9a413b4617910d1706bcf1587d6a927"
+    },
+    {
+      "path": "examples/30-content-coverage.csv",
+      "bytes": 283,
+      "sha256": "2c98a975c72f42c16e59fc65a7eb3cde394372c97c9fc229ae0285a637e9be99"
+    },
+    {
+      "path": "knowledge/00-motion-thesis.md",
+      "bytes": 855,
+      "sha256": "32f3163432803c2f061623e95f01cda4941f72e7f323e566f0a65851424d8bf2"
+    },
+    {
+      "path": "knowledge/01-ai-motion-failure-atlas.md",
+      "bytes": 2359,
+      "sha256": "6a1e3920f04a9683e3cb32fc74df685394b2a96c4fa5b0f980a1b84f9cc59a97"
+    },
+    {
+      "path": "knowledge/02-locomotion.md",
+      "bytes": 1992,
+      "sha256": "37da5709df400914147a049261d967c7d96b13769128e430dc9d8f09dbc10917"
+    },
+    {
+      "path": "knowledge/03-actions-combat-traversal.md",
+      "bytes": 2209,
+      "sha256": "b31120b067d3cf500cb14420d947cef6a46b5802d6d1c5bf01399575d616a047"
+    },
+    {
+      "path": "knowledge/04-acting-face-secondary.md",
+      "bytes": 1445,
+      "sha256": "e98e1b60e58087261ece9a505ac1f22d73d620264cb594c713922dc7e9400925"
+    },
+    {
+      "path": "knowledge/05-godot-2d.md",
+      "bytes": 1458,
+      "sha256": "e639b91dca08d2db6a1b407f7c19e9cf3e2c59d3a3bd732b9b1e9c4228f30e5c"
+    },
+    {
+      "path": "knowledge/06-godot-3d.md",
+      "bytes": 2127,
+      "sha256": "d3ec01e4e61b41ad760bfb66ba2b93def3eeda8cc71716719ff87ed41de39ccb"
+    },
+    {
+      "path": "knowledge/07-runtime-and-gameplay.md",
+      "bytes": 1316,
+      "sha256": "64c63586add1f5da9a7f8f79113b35fe35935712f53933423a552eff0bea5f75"
+    },
+    {
+      "path": "knowledge/08-reference-method.md",
+      "bytes": 1084,
+      "sha256": "48028420fa40ad9fd3ba53a76d641e3b70c8fea30185a162485c86e1ba9cad42"
+    },
+    {
+      "path": "knowledge/09-generation-and-cleanup.md",
+      "bytes": 1228,
+      "sha256": "fbb67b3c584fc33854deb80db238eaefaa4356224a216d4213e2af913659ff5d"
+    },
+    {
+      "path": "knowledge/10-multi-agent-routing.md",
+      "bytes": 691,
+      "sha256": "0a842ad68abe3b7cd8016290f5505070e72c4fb0b30f195ac8ac23fb1129ea75"
+    },
+    {
+      "path": "knowledge/11-non-motion-assets.md",
+      "bytes": 1344,
+      "sha256": "f5b9e9a7202c5f8ec8ac81776b68b0e6f3629a81900c22ae15bf3cfa6e010601"
+    },
+    {
+      "path": "knowledge/12-gameplay-design-thesis.md",
+      "bytes": 965,
+      "sha256": "ab46912c6e7c09a8d10f63bb090a2104b2ffcc9ab0ad3105ab915ab9f27070da"
+    },
+    {
+      "path": "knowledge/13-core-loop-and-verbs.md",
+      "bytes": 889,
+      "sha256": "74632b7995676548d2a7957ef0e2f5b6f6e4036da820b8509268175216b2c809"
+    },
+    {
+      "path": "knowledge/14-systems-economy-progression.md",
+      "bytes": 794,
+      "sha256": "c3ac80e6d96b161b18a0097e16837fa9cc0850da4d352706d3f252be8f4256e1"
+    },
+    {
+      "path": "knowledge/15-encounter-pacing-difficulty.md",
+      "bytes": 858,
+      "sha256": "ef58bac143809da4875a33947972ef683c0826f4d81ce84a28c02619779db9e4"
+    },
+    {
+      "path": "knowledge/16-interactive-music.md",
+      "bytes": 1420,
+      "sha256": "fe755850237babc9db494d4b31f351edc5aa90a304a01745bb66788d4cd5ffb2"
+    },
+    {
+      "path": "knowledge/17-godot-audio-implementation.md",
+      "bytes": 1106,
+      "sha256": "b29ea73281df34968b2766569e3deb8dd494e05b79a66913ac8efcfbccdcfdb2"
+    },
+    {
+      "path": "knowledge/18-cross-discipline-event-contract.md",
+      "bytes": 958,
+      "sha256": "2117217f63d5da31fd6688bdcdffeb1478e077ab52103a0260d217479251ffcb"
+    },
+    {
+      "path": "knowledge/19-playtest-and-telemetry.md",
+      "bytes": 790,
+      "sha256": "7df0462ecbfb39da2876241d94f061cdaedbc99c4229dce1bc2d57a433a3b30e"
+    },
+    {
+      "path": "knowledge/20-gameplay-audio-ai-taste-atlas.md",
+      "bytes": 1258,
+      "sha256": "1b79ef5ba9c3e2df0596587a0b650ddbad0a39a21580237b08a05a9d7028e8bd"
+    },
+    {
+      "path": "knowledge/21-level-design-architecture.md",
+      "bytes": 1699,
+      "sha256": "b12cf320871f33623aee2c0fc97acb3d4a16bd1a4c0e3f9479414c8fe0e94b67"
+    },
+    {
+      "path": "knowledge/22-balance-difficulty-models.md",
+      "bytes": 1874,
+      "sha256": "511a768f073ba97f4e21d7bba5322eebc0297e0928d90f127dc1e0ebe6eef81b"
+    },
+    {
+      "path": "knowledge/23-procedural-generation-randomness.md",
+      "bytes": 2129,
+      "sha256": "ff2517bbe767f8212379317e55b47a60a9658bacffe31af604592a1480ff97f8"
+    },
+    {
+      "path": "knowledge/24-replayability-run-variation.md",
+      "bytes": 1641,
+      "sha256": "aeb52c8274cfd997ddf42969c1937edbed43916a5b8a24c94cfe60b0e96c81db"
+    },
+    {
+      "path": "knowledge/25-godot-level-generation.md",
+      "bytes": 1491,
+      "sha256": "84e77bfdc3e7318c0fd297c44bbcd0f80a2e6f4be188294f86f2ddd247773f1b"
+    },
+    {
+      "path": "knowledge/26-level-randomness-ai-taste-atlas.md",
+      "bytes": 1272,
+      "sha256": "770c605a97079abdece0acf7f091d860a022d01d1cdc1c99d288210eecb26791"
+    },
+    {
+      "path": "knowledge/27-content-production-scope.md",
+      "bytes": 635,
+      "sha256": "4ed6d8ba213bd006a6d03c2c0243f079ff9d0080ec2adc2d4575ff40026cec3e"
+    },
+    {
+      "path": "knowledge/28-narrative-quest-cinematics.md",
+      "bytes": 692,
+      "sha256": "02c9268f3f8b7a6a973c1fe16d7e175715178ffec03ca15e583224855bf50e66"
+    },
+    {
+      "path": "knowledge/29-npc-ai-simulation.md",
+      "bytes": 606,
+      "sha256": "e04697e7253447e89eb59fe0be0892a61adc69b791b86659055bcc84ce146101"
+    },
+    {
+      "path": "knowledge/30-gameplay-camera-composition.md",
+      "bytes": 539,
+      "sha256": "4d11fa6a57ba0b6ef3971606444d3461b278badaddf5645b67a22b46ce927530"
+    },
+    {
+      "path": "knowledge/31-technical-art-rendering.md",
+      "bytes": 536,
+      "sha256": "e9c82984a31ba42187f74cfdf55f77ee09f32a936c306073f767cc466cec6e63"
+    },
+    {
+      "path": "knowledge/32-sound-design-voice-mix.md",
+      "bytes": 510,
+      "sha256": "fb2553b204b8dc6873bf021db5e5eb971e63ddda05ffeea39c7fb549a33d0ebd"
+    },
+    {
+      "path": "knowledge/33-ux-accessibility-localization.md",
+      "bytes": 528,
+      "sha256": "930a34a89f6d1d050c6b550d9e4a721d87429619440f1055f6057db27918c141"
+    },
+    {
+      "path": "knowledge/34-content-architecture-save-tools.md",
+      "bytes": 635,
+      "sha256": "b3b1171f71666d694407398bca2791931ce903081ecb3d9455234e5a89b04a2a"
+    },
+    {
+      "path": "knowledge/35-content-qa-automation.md",
+      "bytes": 541,
+      "sha256": "a5cd8770f45ede1c190a723bab16a2b36359eaaed323ae52a4edfb0e7e35b86b"
+    },
+    {
+      "path": "knowledge/36-content-team-routing.md",
+      "bytes": 521,
+      "sha256": "809011460aed99493d24c3b5c4143d506f42120d0eea399dcd9fe6e0483ffc26"
+    },
+    {
+      "path": "scripts/analyze_level_runs.py",
+      "bytes": 2601,
+      "sha256": "d0365d2864a6f51a23ce9ad08295d35b9be72defc93745e9ad1bea3d5ddb5629"
+    },
+    {
+      "path": "scripts/analyze_motion_csv.py",
+      "bytes": 6263,
+      "sha256": "9a46d89c3db1e0e6ec7724f0b973f878d9221958de1721aeb233fd8fe2e2635a"
+    },
+    {
+      "path": "scripts/analyze_playtest_csv.py",
+      "bytes": 2337,
+      "sha256": "509dc20561075f2a24e7f1cf9f044118ebcb705dd045610fb77418bf297bdaee"
+    },
+    {
+      "path": "scripts/audit_content_coverage.py",
+      "bytes": 1220,
+      "sha256": "767d953d376f9bd3a3c79e9730d6a38e197433a3f73d27b63e61525f9571318c"
+    },
+    {
+      "path": "scripts/audit_random_table.py",
+      "bytes": 2424,
+      "sha256": "e97431e0f2b8f87379f241ab343f8cadf7013d2c32bfa9b8926dff6b04330c56"
+    },
+    {
+      "path": "scripts/build_dispatch_plan.py",
+      "bytes": 17290,
+      "sha256": "0af8cc4a06788ab9b564d5e51a3c5b033abf7fd5310938c98514f176ead0f6c8"
+    },
+    {
+      "path": "scripts/godot_accessibility_settings.gd",
+      "bytes": 573,
+      "sha256": "1a9b7d4d6cc35ed38aa4d5b4c0bd879ad61f9b611cdce12b725c479e415bf0fb"
+    },
+    {
+      "path": "scripts/godot_adaptive_music_director.gd",
+      "bytes": 2660,
+      "sha256": "d9ed137c5c67ac49ddadda57cc4715b973b9342cdbecaba02bd2a4e1ebf85dd4"
+    },
+    {
+      "path": "scripts/godot_audio_cue_router.gd",
+      "bytes": 559,
+      "sha256": "dbee230e7e7b7da48be098fb62b9ccb2957b994230e90d8efd1efcfbb35a1072"
+    },
+    {
+      "path": "scripts/godot_camera_impulse_director.gd",
+      "bytes": 591,
+      "sha256": "a63efd18cb59f1fd9648152c63cca5dc93cbb102cb70e6292f81a66039cbdd03"
+    },
+    {
+      "path": "scripts/godot_encounter_intensity_director.gd",
+      "bytes": 1699,
+      "sha256": "ed2b3f9a65def933bf17c9ca4c04a153f19c93b4f848fc00dcfa542d5de1c8e6"
+    },
+    {
+      "path": "scripts/godot_motion_capture.gd",
+      "bytes": 1952,
+      "sha256": "d2c21a080c534d3e7562850bc311fb2c39d2c972b0819addb858d07651b3473b"
+    },
+    {
+      "path": "scripts/godot_npc_decision_trace.gd",
+      "bytes": 862,
+      "sha256": "f01622102c626910e15d9062250a3ad1cabf08e0599f11e25f9fb3a13650f5bd"
+    },
+    {
+      "path": "scripts/godot_seeded_generation_context.gd",
+      "bytes": 1698,
+      "sha256": "1506140fc4ceb8039d965821524491d92f917103119f54286bb31e4d3e87d0c2"
+    },
+    {
+      "path": "scripts/godot_versioned_save_manager.gd",
+      "bytes": 2076,
+      "sha256": "f489a4336f13b130107f7f999c240908bfa828452e3474e0cb8973ed31236683"
+    },
+    {
+      "path": "scripts/sample_motion.csv",
+      "bytes": 435,
+      "sha256": "5c9f29ed22f4cc66953afc8163d2a38d8fbe6a71572befa7226437f025edf552"
+    },
+    {
+      "path": "scripts/validate_accessibility_localization.py",
+      "bytes": 1455,
+      "sha256": "af4c784ed522a385f658350c463633ce496b86b14423ba6a1318f4db6db33897"
+    },
+    {
+      "path": "scripts/validate_balance_model.py",
+      "bytes": 4347,
+      "sha256": "656dd4b983b1a232d99a6cc3f5fa38bd3ab9d726018bcfc8320517ee13a01085"
+    },
+    {
+      "path": "scripts/validate_content_budget.py",
+      "bytes": 1352,
+      "sha256": "e5165571651e673927263a61819fe95fe4889e0174fc2e00f527dbcb7ba4dfda"
+    },
+    {
+      "path": "scripts/validate_event_contract.py",
+      "bytes": 2495,
+      "sha256": "82d1f5411f0c2fabe449ce700e7aa9dde5472d615f3efce87a978ad6a0b44d73"
+    },
+    {
+      "path": "scripts/validate_gameplay_spec.py",
+      "bytes": 3757,
+      "sha256": "3f384e4352ae9ba0662cbcc4e672567295ae4dee250cd0eecabcfc811a953af2"
+    },
+    {
+      "path": "scripts/validate_generator_spec.py",
+      "bytes": 3727,
+      "sha256": "78493653882948877c05e396040b280399218f23597624fd0f9eed2f401f647f"
+    },
+    {
+      "path": "scripts/validate_level_spec.py",
+      "bytes": 4085,
+      "sha256": "c80819d6f0017551427aeaee4d62cdfa229b8ea504284ac51559f12d45b1905e"
+    },
+    {
+      "path": "scripts/validate_music_map.py",
+      "bytes": 4164,
+      "sha256": "ae7035939ec82420d0533bdb8b97c33a40218d2627946c8dfcfce3ffb23efa6b"
+    },
+    {
+      "path": "scripts/validate_npc_ai_spec.py",
+      "bytes": 2080,
+      "sha256": "f617cee5f60b1bfaf800af2da8e464c3ae45f204e75814580ef3b0f535545454"
+    },
+    {
+      "path": "scripts/validate_quest_spec.py",
+      "bytes": 2140,
+      "sha256": "175aa7adae04750da1b875eb393ace4988de9e81d4ea58ec591a09b08960a3d9"
+    },
+    {
+      "path": "scripts/validate_save_schema.py",
+      "bytes": 1589,
+      "sha256": "f5c7cc0e0b65c667af714783f749971f500957fd219b343810d76d498b457eb1"
+    },
+    {
+      "path": "skills/authoring-narrative-quests-cinematics/SKILL.md",
+      "bytes": 1079,
+      "sha256": "414982d32a1686be5775dfe4c0309d02cdf7f77f3f6a44095cfadcbfa419ecb8"
+    },
+    {
+      "path": "skills/building-godot-content-pipelines/SKILL.md",
+      "bytes": 952,
+      "sha256": "9767aa1230f33aa36122c324756de9d9e5473121656c7bd42ceec5459c3ff905"
+    },
+    {
+      "path": "skills/designing-godot-gameplay/SKILL.md",
+      "bytes": 1847,
+      "sha256": "5c654ac8ad71eed9ce8781668a626e1d0bb2964e0ea557236be958ad49040e10"
+    },
+    {
+      "path": "skills/designing-godot-levels-balance-randomness/SKILL.md",
+      "bytes": 2633,
+      "sha256": "4494c99413f3a1100d516ac806fb6ae883bf18a43252acf28b571909ff7c8b36"
+    },
+    {
+      "path": "skills/designing-npc-ai-simulation/SKILL.md",
+      "bytes": 952,
+      "sha256": "3660f8032b7bb604736bad3cbc0ac20a2bf6984b7f8817c993c94de5eb33e4ea"
+    },
+    {
+      "path": "skills/directing-interactive-game-music/SKILL.md",
+      "bytes": 1673,
+      "sha256": "1c36e97e0e43e3b6a60662aec33c02cdd718894e0d575d503a9ad248eefe96aa"
+    },
+    {
+      "path": "skills/polishing-game-presentation-accessibility/SKILL.md",
+      "bytes": 774,
+      "sha256": "796d59c508597058ab6938106c543613253db5c3faaf1d39e99ddddd3c237cb2"
+    },
+    {
+      "path": "skills/producing-game-content/SKILL.md",
+      "bytes": 1034,
+      "sha256": "b79f7a03ecbeb6111b98e82adc6beec705a6d808d30a98a7491cc351f87e5a92"
+    },
+    {
+      "path": "templates/accessibility-localization.template.json",
+      "bytes": 365,
+      "sha256": "220e14dbdad54a75c42740332cc6cf855c95387b7b8789ce7b989d4bfd8569a5"
+    },
+    {
+      "path": "templates/action-coverage-matrix.md",
+      "bytes": 1156,
+      "sha256": "bb209582e9eff06466c77c7eb4d2cb4eb62fa27da24ce1c38f47ee707032c8bb"
+    },
+    {
+      "path": "templates/agent-task-packet.md",
+      "bytes": 635,
+      "sha256": "778d530c389c5a766d700dfd7a4468ad7578cf623aac4b0fd83e32385ae18bd4"
+    },
+    {
+      "path": "templates/animation-brief.md",
+      "bytes": 664,
+      "sha256": "78321c827d9d17edef685e0ab37f5ae258afdc36f9bc6182bfb1a85cc2398e07"
+    },
+    {
+      "path": "templates/audio-cue-sheet.md",
+      "bytes": 145,
+      "sha256": "318e818468b0d9494364ececd25e37a2ae25e548c8f8d2fa9fa6d8153024723f"
+    },
+    {
+      "path": "templates/balance-model.template.json",
+      "bytes": 1326,
+      "sha256": "8f4eab5bbe1b2d0f73067c6642f2424430654ef1f333d115cc18f8fffa36878d"
+    },
+    {
+      "path": "templates/camera-mode-plan.md",
+      "bytes": 152,
+      "sha256": "d71bd06e9baa82a31a2747ea1f8cccc0b26fb5ad087a26b7f84428c3432993aa"
+    },
+    {
+      "path": "templates/content-budget.template.json",
+      "bytes": 470,
+      "sha256": "6d6bfef619a484d2d28f3fd14a4cf84603e21467538a8e3c07f5f70c82c44a8f"
+    },
+    {
+      "path": "templates/content-milestone.md",
+      "bytes": 262,
+      "sha256": "0234bd137005fd29de83758c46c32e67b326813c67a95184658f0cb4e4c58339"
+    },
+    {
+      "path": "templates/content-test-matrix.md",
+      "bytes": 186,
+      "sha256": "25037a29526e08df69240942d1cc54269efc617fb2f094d5e45acc6b12002035"
+    },
+    {
+      "path": "templates/core-loop-map.md",
+      "bytes": 250,
+      "sha256": "ff6eb8bb92dee1e4a8592410398e0f49fe2b42587e2f7548af0a6231babc581e"
+    },
+    {
+      "path": "templates/encounter-spec.md",
+      "bytes": 260,
+      "sha256": "e5b2646ebb53fecadc0db43df97cd3ef46e6bf007bcb49e510ef249e3c33e242"
+    },
+    {
+      "path": "templates/event-contract.template.json",
+      "bytes": 468,
+      "sha256": "2a18c47b3c70b0b42374e3697bced1e746036109245f26d410b37d2f9be7e834"
+    },
+    {
+      "path": "templates/event-timeline.md",
+      "bytes": 428,
+      "sha256": "4165d8125b9b6ba942aa722084158b84a40bcdb46602c5158c039fcda65025d8"
+    },
+    {
+      "path": "templates/game-feel-merge-report.md",
+      "bytes": 364,
+      "sha256": "29c87c79ed1a93b1c8acf6f1a24b0e538332ae8e549cddccc1c9b48b0802a4ff"
+    },
+    {
+      "path": "templates/gameplay-brief.md",
+      "bytes": 296,
+      "sha256": "19d316430997cad9cbddbdeb9f2bf71137682553fb162ce07dd5d0e51ee17c65"
+    },
+    {
+      "path": "templates/generation-prompt.md",
+      "bytes": 956,
+      "sha256": "08ed358b92091d43caae2917cfa075a226e0df5447afbea20e08008d8c9a3929"
+    },
+    {
+      "path": "templates/generator-spec.template.json",
+      "bytes": 1430,
+      "sha256": "2a310e24d1d324ee0a3bf4ffbb1e51d0ed48638f9e5dac85f2a7c64bdc8ea022"
+    },
+    {
+      "path": "templates/level-spec.md",
+      "bytes": 815,
+      "sha256": "2a45c670dd3c4c71740125f1a8a185d892c36625e55ebffa224f0b3bd2a979d8"
+    },
+    {
+      "path": "templates/mechanic-spec.md",
+      "bytes": 326,
+      "sha256": "b3bdac32ee39c87a499a6c2f337b8abb5088432582bcebb2b12d115f8e4f6447"
+    },
+    {
+      "path": "templates/merge-report.md",
+      "bytes": 445,
+      "sha256": "9fdc13908862c967c8f861e914841d614da1fbf6ccbf35fff9c699877d2f7100"
+    },
+    {
+      "path": "templates/motion-review.md",
+      "bytes": 1044,
+      "sha256": "ff70adb70ee321b076cb501f4a6b0e2e311b8d9a2f5431ced3189f992672c54c"
+    },
+    {
+      "path": "templates/music-brief.md",
+      "bytes": 370,
+      "sha256": "bccf5055f364e06dcc8e2f69929993c3dcf30a2adc326dd923ff80f9c6af74ce"
+    },
+    {
+      "path": "templates/music-state-map.template.json",
+      "bytes": 409,
+      "sha256": "80f4150a60507925e4c86f0084d4e26f9fb96bb39d791305f6ef88ae1be51b0c"
+    },
+    {
+      "path": "templates/npc-ai-spec.template.json",
+      "bytes": 1030,
+      "sha256": "88e809c4f2d09ae232dcbcb976ab5262dfa66d0acf36904954bf361b6a4745e0"
+    },
+    {
+      "path": "templates/playtest-plan.md",
+      "bytes": 220,
+      "sha256": "458e2e2a920ff1fc360987b3378d3d51edd33d08f8d8b65ccd52ff1061228925"
+    },
+    {
+      "path": "templates/quest-spec.template.json",
+      "bytes": 1244,
+      "sha256": "5a213c959bdd05ce1271c5f4cc5e964b036454e883bc452e0e1f5c478b8741c3"
+    },
+    {
+      "path": "templates/reference-card.md",
+      "bytes": 468,
+      "sha256": "bdcd4a818d804601906bc96b72e9de60c21176287b599c790cf01f9d5be8c38f"
+    },
+    {
+      "path": "templates/run-variation-plan.md",
+      "bytes": 678,
+      "sha256": "2571a2cc6f3ca1bc7488d46893490c425d22c201a90e63efc58df42635320dc1"
+    },
+    {
+      "path": "templates/save-schema.template.json",
+      "bytes": 435,
+      "sha256": "932121bb33d03884a4b39014aeddeb9ccb0e811b54ee2d3f1c77c23f8e6cd6b2"
+    },
+    {
+      "path": "tests/baseline_failures.md",
+      "bytes": 1685,
+      "sha256": "8cd3ac43c62e09ac15547d05c3f94319a77d89a999da550f3aea1faca7aaf9b4"
+    },
+    {
+      "path": "tests/parallel_pressure_scenarios.md",
+      "bytes": 1498,
+      "sha256": "c2a6383114d06b80c3ed520f0e25378ab9c8b7d5722f2e81bcd860a7348e1c7b"
+    },
+    {
+      "path": "tests/pressure_scenarios.md",
+      "bytes": 1174,
+      "sha256": "04946c123de9ee3ca624a0359d5026a515f5211b7cdcd82c1c6b1b90aec98232"
+    },
+    {
+      "path": "tests/test_analyze_level_runs.py",
+      "bytes": 1333,
+      "sha256": "14e2f65c4ec801ebf3a75fd6077371a5a87d277ee4fdc9f606c3d5ee7b22a4d7"
+    },
+    {
+      "path": "tests/test_analyze_motion_csv.py",
+      "bytes": 1384,
+      "sha256": "28b7a3f03c31dc2cfd1769f112aa06320884d03d9d2f78089c722ee4bcf1e746"
+    },
+    {
+      "path": "tests/test_analyze_playtest_csv.py",
+      "bytes": 672,
+      "sha256": "57be548b7a15c4b334b196ee36859c2fe0790a560ca3aba2d4ec9043e1fc65ab"
+    },
+    {
+      "path": "tests/test_audit_content_coverage.py",
+      "bytes": 1012,
+      "sha256": "53b1c9767a53055bbc3a1b0e05ae6dce55cffa39a4f1d3d318349bcf43a94c1c"
+    },
+    {
+      "path": "tests/test_audit_random_table.py",
+      "bytes": 1223,
+      "sha256": "5266a389a9b15b797959b1b6241d24f2e753e45be4bff0e43f5b82d9b4129c1e"
+    },
+    {
+      "path": "tests/test_content_team_v6.py",
+      "bytes": 3268,
+      "sha256": "7b8620636f31a2675f32d148e26427b9e8c96a8447fbbe8e8fc9a9deb162f4bb"
+    },
+    {
+      "path": "tests/test_dispatch_plan.py",
+      "bytes": 3664,
+      "sha256": "e29ba2a1143edae30ef1f52aa3ceba65e46f6cf7fa8107a683eecfcc30861824"
+    },
+    {
+      "path": "tests/test_validate_accessibility_localization.py",
+      "bytes": 881,
+      "sha256": "eb35cf825fb1133ff5d18734daced9060b510f763279390faa998932e7264745"
+    },
+    {
+      "path": "tests/test_validate_balance_model.py",
+      "bytes": 2028,
+      "sha256": "8c909ac865318a43b3076b1443b97d4eb4e295ac83bb0f50262353af7cb967b5"
+    },
+    {
+      "path": "tests/test_validate_content_budget.py",
+      "bytes": 856,
+      "sha256": "7a12bcee1bf827e8cf4fa02d24dc173602bd8242256cb6b621a91bac6e4d40f4"
+    },
+    {
+      "path": "tests/test_validate_event_contract.py",
+      "bytes": 818,
+      "sha256": "938f4539bc8a63d66df7848a51cda420ae3ac98adfbb601de717f52a3206f836"
+    },
+    {
+      "path": "tests/test_validate_gameplay_spec.py",
+      "bytes": 801,
+      "sha256": "b03a20a63eb5b292095522c0817eb2a3feead7a6bf2bc8fbf0f4e4fdd358334c"
+    },
+    {
+      "path": "tests/test_validate_generator_spec.py",
+      "bytes": 1861,
+      "sha256": "a6e1b977952e9c3d8598b117a2333e60022bf93a4757832fd5a04916309298f8"
+    },
+    {
+      "path": "tests/test_validate_level_spec.py",
+      "bytes": 2223,
+      "sha256": "2476df25664e4d3202464dcd28dc60175d43bbc23e7e359ec389f24830c93e4f"
+    },
+    {
+      "path": "tests/test_validate_music_map.py",
+      "bytes": 1168,
+      "sha256": "f2c68e262ce9a4132a3d24c83495788dd895bb8b0a398f5400e9debebbbc9ef7"
+    },
+    {
+      "path": "tests/test_validate_npc_ai_spec.py",
+      "bytes": 1192,
+      "sha256": "86d89f4bbbc053ba00c2018d5117648f7892e1214495056a9d8b03a4365e5b63"
+    },
+    {
+      "path": "tests/test_validate_quest_spec.py",
+      "bytes": 1058,
+      "sha256": "98892aa0e01ac3cbc4c791246e97821248629ac34988f00b7117a4f301a3e24f"
+    },
+    {
+      "path": "tests/test_validate_save_schema.py",
+      "bytes": 971,
+      "sha256": "f7094da82f4bd220fd026653c2fa5f198210f77e96b379008d055123a8683d26"
+    },
+    {
+      "path": "tests/validate_package.py",
+      "bytes": 6385,
+      "sha256": "83486c735582a5c122f51308d3bcbda5ff7a309c50dbd6e7ab241842880bb55c"
+    },
+    {
+      "path": "workflows/cross-discipline-pipeline.md",
+      "bytes": 926,
+      "sha256": "1116574885306ae48d915c839d7271baa920caecb9ed958e5cf8e0b259aef0ad"
+    },
+    {
+      "path": "workflows/manual-no-agent.md",
+      "bytes": 375,
+      "sha256": "626e07381bb0539093034652c0bb1462fd17d82449847474448c893108e73dcc"
+    },
+    {
+      "path": "workflows/merge-protocol.md",
+      "bytes": 725,
+      "sha256": "31a3b08bec9353beea17734881d69946f1e267faa0735c5778f120aac5db7ae9"
+    },
+    {
+      "path": "workflows/parallel-swarm.md",
+      "bytes": 717,
+      "sha256": "ad17475fd457fda28bc6241aef478d02ff159777cbc6acdcae67e51bf4e3791a"
+    },
+    {
+      "path": "workflows/sequential-fallback.md",
+      "bytes": 464,
+      "sha256": "27be7e22f777961603fc55d9b65a3a78cff08b514ef3dce4dfe06749f4038908"
+    }
+  ]
+}

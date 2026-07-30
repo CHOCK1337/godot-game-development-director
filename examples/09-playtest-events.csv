@@ -1,0 +1,14 @@
+session_id,timestamp,event_name,value
+s1,0,session.started,
+s1,5,choice.guard,
+s1,10,music.state.changed,combat_medium
+s1,25,player.failed,heavy_attack
+s1,30,player.retry,
+s1,55,music.state.changed,combat_high
+s1,90,session.completed,
+s2,0,session.started,
+s2,8,choice.dodge,
+s2,20,music.state.changed,combat_medium
+s2,45,player.failed,stamina_zero
+s2,50,player.retry,
+s2,100,session.completed,

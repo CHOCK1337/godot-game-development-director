@@ -1,0 +1,90 @@
+{
+  "experience_goal": "玩家在近距离战斗中通过观察敌人承诺动作，在进攻收益与暴露风险之间快速切换。",
+  "player_verbs": [
+    "move",
+    "light_attack",
+    "guard",
+    "dodge"
+  ],
+  "core_loop": [
+    {
+      "step": "read",
+      "player_decision": "识别敌人攻击意图与距离",
+      "state_change": "threat_window becomes known",
+      "feedback": [
+        "telegraph animation",
+        "threat SFX"
+      ]
+    },
+    {
+      "step": "commit",
+      "player_decision": "选择攻击、防御或闪避",
+      "state_change": "stamina and position change",
+      "feedback": [
+        "character animation",
+        "UI stamina",
+        "movement"
+      ]
+    },
+    {
+      "step": "resolve",
+      "player_decision": "根据命中/格挡结果继续或退出",
+      "state_change": "health, stagger and advantage change",
+      "feedback": [
+        "impact SFX",
+        "VFX",
+        "hit reaction"
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "light_attack",
+      "verb": "light_attack",
+      "cost": "small stamina and recovery commitment",
+      "success": "deal damage and small stagger",
+      "failure": "whiff recovery exposes player",
+      "counterplay": "enemy spacing, guard or armor",
+      "godot_owner": "CombatStateMachine"
+    },
+    {
+      "id": "guard",
+      "verb": "guard",
+      "cost": "stamina drain and reduced movement",
+      "success": "reduce damage and create small response window",
+      "failure": "guard break at zero stamina",
+      "counterplay": "enemy heavy attack or grab",
+      "godot_owner": "DefenseSystem"
+    },
+    {
+      "id": "dodge",
+      "verb": "dodge",
+      "cost": "medium stamina and positional commitment",
+      "success": "avoid damage and reposition",
+      "failure": "late timing enters recovery",
+      "counterplay": "tracking attacks and delayed timing",
+      "godot_owner": "MovementStateMachine"
+    }
+  ],
+  "resources": [
+    {
+      "id": "stamina",
+      "faucets": [
+        "regenerate outside commitment"
+      ],
+      "sinks": [
+        "attack",
+        "guard",
+        "dodge"
+      ]
+    }
+  ],
+  "failure_and_recovery": "错误必须通过明确读招、体力或距离原因解释；玩家可在短暂恢复后调整策略。",
+  "playtest_hypotheses": [
+    {
+      "hypothesis": "玩家能在三次尝试内解释重攻击需要闪避或离开范围",
+      "measure": "post-run explanation and counter choice by attempt",
+      "falsifier": "多数玩家持续认为伤害随机或只靠堆血"
+    }
+  ]
+}

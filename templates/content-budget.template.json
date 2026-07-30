@@ -1,0 +1,21 @@
+{
+  "platform_profile": "mid_pc_1080p_60",
+  "budgets": {
+    "draw_calls": 900,
+    "visible_triangles": 1800000,
+    "texture_memory_mb": 1400,
+    "particles": 12000,
+    "shadowed_lights": 6,
+    "skinned_characters": 20,
+    "audio_voices": 64
+  },
+  "measurements": {
+    "draw_calls": 710,
+    "visible_triangles": 1320000,
+    "texture_memory_mb": 1080,
+    "particles": 8300,
+    "shadowed_lights": 4,
+    "skinned_characters": 14,
+    "audio_voices": 47
+  }
+}

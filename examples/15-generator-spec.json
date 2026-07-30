@@ -1,0 +1,106 @@
+{
+  "generator_id": "beacon_dungeon_v1",
+  "content_type": "typed_room_graph",
+  "seed_policy": {
+    "deterministic": true,
+    "record_seed": true,
+    "record_state": true,
+    "streams": [
+      "layout",
+      "encounter",
+      "loot",
+      "decoration"
+    ]
+  },
+  "representation": "typed_room_graph_with_portals",
+  "hard_invariants": [
+    {
+      "id": "reachable_goal",
+      "description": "start 必须可达 boss"
+    },
+    {
+      "id": "recovery_before_boss",
+      "description": "boss 前至少有一个 recovery slot"
+    },
+    {
+      "id": "safe_spawn",
+      "description": "起点没有立即伤害或不可见攻击"
+    }
+  ],
+  "generation_pipeline": [
+    "sample_skeleton",
+    "assign_room_roles",
+    "place_gates",
+    "validate",
+    "repair",
+    "score_soft_goals",
+    "decorate",
+    "instantiate"
+  ],
+  "validation": {
+    "checks": [
+      "reachable_goal",
+      "recovery_before_boss",
+      "safe_spawn"
+    ],
+    "max_attempts": 12
+  },
+  "repair_policy": [
+    "connect_goal_with_safe_portal",
+    "insert_recovery_room",
+    "move_spawn_hazards"
+  ],
+  "expressive_range_metrics": [
+    "linearity",
+    "branching",
+    "combat_density",
+    "recovery_spacing",
+    "optional_value"
+  ],
+  "fallbacks": [
+    "load_res://levels/safe_runs/beacon_safe_01.tscn"
+  ],
+  "random_tables": [
+    {
+      "id": "room_roles",
+      "policy": {
+        "history_size": 2,
+        "pity_after": 5
+      },
+      "entries": [
+        {
+          "id": "combat",
+          "weight": 5
+        },
+        {
+          "id": "reward",
+          "weight": 2
+        },
+        {
+          "id": "recovery",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "mutators",
+      "policy": {
+        "max_repeat": 1
+      },
+      "entries": [
+        {
+          "id": "darkness",
+          "weight": 2
+        },
+        {
+          "id": "moving_hazards",
+          "weight": 1
+        },
+        {
+          "id": "elite_patrol",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

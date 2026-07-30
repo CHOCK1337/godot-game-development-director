@@ -1,0 +1,28 @@
+{
+  "content_tags": [
+    "vertical_slice",
+    "quest_graph",
+    "branching_dialogue",
+    "npc_ai",
+    "combat_camera",
+    "subtitles",
+    "localization",
+    "save_schema"
+  ],
+  "audio_tags": [
+    "footstep_sfx",
+    "voice_over"
+  ],
+  "asset_tags": [
+    "shader_budget",
+    "lod"
+  ],
+  "technical_tags": [
+    "navigationagent",
+    "custom_resource",
+    "save_state"
+  ],
+  "needs_godot_implementation": true,
+  "needs_content_qa": true,
+  "evidence_quality": "timestamped"
+}

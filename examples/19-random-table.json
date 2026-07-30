@@ -1,0 +1,21 @@
+{
+  "id": "room_roles",
+  "policy": {
+    "history_size": 2,
+    "pity_after": 5
+  },
+  "entries": [
+    {
+      "id": "combat",
+      "weight": 5
+    },
+    {
+      "id": "reward",
+      "weight": 2
+    },
+    {
+      "id": "recovery",
+      "weight": 1
+    }
+  ]
+}

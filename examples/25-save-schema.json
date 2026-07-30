@@ -1,0 +1,26 @@
+{
+  "schema_version": 3,
+  "root_keys": [
+    "player",
+    "world",
+    "quests",
+    "inventory",
+    "settings"
+  ],
+  "migrations": [
+    {
+      "from": 1,
+      "to": 2,
+      "name": "split_world_quest_state"
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "name": "add_stable_content_ids"
+    }
+  ],
+  "atomic_write": true,
+  "backup_slots": 2,
+  "unknown_key_policy": "preserve",
+  "path": "user://saves/profile_01.json"
+}

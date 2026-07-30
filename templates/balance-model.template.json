@@ -1,0 +1,65 @@
+{
+  "target_experience": "玩家能理解失败原因，并通过改变策略而不是纯刷数值提高成功率",
+  "skill_bands": [
+    "novice",
+    "competent",
+    "expert"
+  ],
+  "challenge_dimensions": [
+    "information",
+    "decision",
+    "execution",
+    "resource"
+  ],
+  "metrics": [
+    {
+      "id": "completion_rate",
+      "target_min": 0.45,
+      "target_max": 0.75,
+      "segment": "competent"
+    }
+  ],
+  "tuning_parameters": [
+    {
+      "id": "encounter_budget",
+      "min": 2,
+      "max": 12,
+      "default": 6,
+      "step": 1,
+      "unit": "threat_points"
+    }
+  ],
+  "difficulty_curve": [
+    {
+      "stage": "teach",
+      "challenge_budget": 3
+    },
+    {
+      "stage": "combine",
+      "challenge_budget": 6
+    },
+    {
+      "stage": "test",
+      "challenge_budget": 9
+    },
+    {
+      "stage": "recovery",
+      "challenge_budget": 4
+    }
+  ],
+  "adaptation_policy": {
+    "enabled": false,
+    "signals": [],
+    "allowed_adjustments": [],
+    "cooldown_s": 60,
+    "max_step": 1,
+    "player_respect": "不改变已学习的敌人攻击、碰撞和伤害规则"
+  },
+  "playtest_hypotheses": [
+    {
+      "hypothesis": "competent 玩家完成率落入目标区间",
+      "measure": "completion_rate by skill_band",
+      "falsifier": "低于0.45或高于0.75"
+    }
+  ]
+}

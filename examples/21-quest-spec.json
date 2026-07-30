@@ -1,0 +1,61 @@
+{
+  "quest_id": "archive_echo",
+  "start_node": "meet_curator",
+  "nodes": [
+    {
+      "id": "meet_curator",
+      "type": "dialogue",
+      "localization_key": "quest.archive.meet"
+    },
+    {
+      "id": "find_lens",
+      "type": "objective",
+      "localization_key": "quest.archive.find_lens"
+    },
+    {
+      "id": "choose_use",
+      "type": "choice",
+      "localization_key": "quest.archive.choose"
+    },
+    {
+      "id": "return_lens",
+      "type": "terminal",
+      "localization_key": "quest.archive.return"
+    },
+    {
+      "id": "activate_lens",
+      "type": "terminal",
+      "localization_key": "quest.archive.activate"
+    }
+  ],
+  "edges": [
+    {
+      "from": "meet_curator",
+      "to": "find_lens",
+      "condition": "accepted"
+    },
+    {
+      "from": "find_lens",
+      "to": "choose_use",
+      "condition": "item.lens_acquired"
+    },
+    {
+      "from": "choose_use",
+      "to": "return_lens",
+      "condition": "choice.return"
+    },
+    {
+      "from": "choose_use",
+      "to": "activate_lens",
+      "condition": "choice.activate"
+    }
+  ],
+  "fail_states": [
+    "abandoned",
+    "curator_unavailable"
+  ],
+  "save_keys": [
+    "quest.archive_echo.state",
+    "world.archive_lens_outcome"
+  ]
+}

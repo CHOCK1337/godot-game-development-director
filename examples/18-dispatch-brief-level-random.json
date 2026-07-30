@@ -1,0 +1,27 @@
+{
+  "gameplay_tags": [
+    "roguelike",
+    "run_variation",
+    "loot_table",
+    "level_design",
+    "critical_path",
+    "difficulty_curve",
+    "procedural_generation",
+    "seed"
+  ],
+  "technical_tags": [
+    "tilemaplayer",
+    "astargrid2d",
+    "navigation",
+    "godot"
+  ],
+  "data_tags": [
+    "level_runs",
+    "seed_outlier",
+    "path_diversity"
+  ],
+  "needs_godot_implementation": true,
+  "has_playtest_data": true,
+  "evidence_quality": "timestamped",
+  "reference_gap": false
+}

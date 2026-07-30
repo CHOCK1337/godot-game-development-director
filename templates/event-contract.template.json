@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "event_id": "encounter.intensity.changed",
+      "producer": "EncounterDirector",
+      "timing": "after authoritative state update",
+      "payload": {
+        "level": "low|medium|high",
+        "reason": "string"
+      },
+      "consumers": [
+        "music",
+        "ui",
+        "telemetry"
+      ],
+      "dedupe": "emit only when stable level changes",
+      "fallback": "core combat remains readable without consumers"
+    }
+  ]
+}

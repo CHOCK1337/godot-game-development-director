@@ -1,0 +1,129 @@
+{
+  "experience_goal": "玩家利用中央灯塔定位，在安全主路与高风险资源支路之间作出可读选择",
+  "level_type": "2d_action_roguelite",
+  "player_capabilities": [
+    "move",
+    "dash",
+    "melee_attack"
+  ],
+  "topology": {
+    "nodes": [
+      {
+        "id": "start",
+        "kind": "start"
+      },
+      {
+        "id": "crossroads",
+        "kind": "orientation"
+      },
+      {
+        "id": "combat_a",
+        "kind": "combat"
+      },
+      {
+        "id": "risk_branch",
+        "kind": "optional_reward"
+      },
+      {
+        "id": "rest",
+        "kind": "recovery"
+      },
+      {
+        "id": "boss",
+        "kind": "goal"
+      }
+    ],
+    "edges": [
+      {
+        "from": "start",
+        "to": "crossroads"
+      },
+      {
+        "from": "crossroads",
+        "to": "combat_a"
+      },
+      {
+        "from": "combat_a",
+        "to": "rest"
+      },
+      {
+        "from": "rest",
+        "to": "boss"
+      },
+      {
+        "from": "crossroads",
+        "to": "risk_branch"
+      },
+      {
+        "from": "risk_branch",
+        "to": "rest"
+      }
+    ]
+  },
+  "critical_path": [
+    "start",
+    "crossroads",
+    "combat_a",
+    "rest",
+    "boss"
+  ],
+  "optional_routes": [
+    {
+      "id": "resource_risk",
+      "path": [
+        "crossroads",
+        "risk_branch",
+        "rest"
+      ],
+      "value": "额外构筑选择但敌人更密集",
+      "rejoins": true
+    }
+  ],
+  "intensity_curve": [
+    {
+      "segment": "start",
+      "intensity": 1
+    },
+    {
+      "segment": "crossroads",
+      "intensity": 2
+    },
+    {
+      "segment": "combat_a",
+      "intensity": 7
+    },
+    {
+      "segment": "rest",
+      "intensity": 3
+    },
+    {
+      "segment": "boss",
+      "intensity": 9
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "central_beacon",
+      "purpose": "从 crossroads 与 rest 均可看到，确认主方向"
+    }
+  ],
+  "gates": [
+    {
+      "id": "boss_gate",
+      "requires": "combat_a_or_risk_branch_resolved"
+    }
+  ],
+  "hard_invariants": [
+    "start_reaches_goal",
+    "all_required_rooms_reachable",
+    "boss_gate_satisfiable",
+    "spawn_safe"
+  ],
+  "playtest_hypotheses": [
+    {
+      "hypothesis": "首次玩家在 crossroads 15秒内能判断主路和风险支路",
+      "measure": "hesitation_time_and_wrong_turn_rate",
+      "falsifier": "中位停顿超过15秒或错误回头超过30%"
+    }
+  ]
+}

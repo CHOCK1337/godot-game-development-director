@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Godot Game Feel Specialist Report",
+  "type": "object",
+  "required": [
+    "task_id",
+    "domain",
+    "verdict",
+    "evidence",
+    "hypotheses",
+    "fixes",
+    "risks",
+    "unknowns"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "domain": {
+      "enum": [
+        "evidence",
+        "locomotion",
+        "action",
+        "acting",
+        "gameplay_core",
+        "systems_economy",
+        "encounter_pacing",
+        "interactive_music",
+        "godot_audio",
+        "godot",
+        "asset_style",
+        "reference",
+        "playtest",
+        "qa",
+        "level_architecture",
+        "balance_difficulty",
+        "procedural_generation",
+        "run_variation",
+        "content_production",
+        "narrative_quest_cinematics",
+        "npc_ai_simulation",
+        "gameplay_camera",
+        "technical_art_rendering",
+        "sound_design_voice_mix",
+        "ux_accessibility_localization",
+        "content_architecture_save_tools",
+        "content_qa"
+      ]
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "range",
+          "observation",
+          "confidence"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string"
+          },
+          "range": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cause",
+          "confidence",
+          "verification"
+        ],
+        "properties": {
+          "cause": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "verification": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fixes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "change",
+          "responsibility_layer",
+          "reason",
+          "implementation",
+          "cost"
+        ],
+        "properties": {
+          "change": {
+            "type": "string"
+          },
+          "responsibility_layer": {
+            "enum": [
+              "source_asset",
+              "DCC",
+              "import",
+              "animation_graph",
+              "gameplay_design",
+              "systems_design",
+              "level_design",
+              "audio_content",
+              "audio_runtime",
+              "runtime",
+              "presentation",
+              "telemetry",
+              "research",
+              "balance_design",
+              "procedural_generation"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "implementation": {
+            "type": "string"
+          },
+          "cost": {
+            "enum": [
+              "small",
+              "medium",
+              "large"
+            ]
+          }
+        }
+      }
+    },
+    "godot_implications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

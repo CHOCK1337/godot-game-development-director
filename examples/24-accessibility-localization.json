@@ -1,0 +1,19 @@
+{
+  "locales": [
+    "zh_CN",
+    "en",
+    "ja"
+  ],
+  "subtitles": {
+    "enabled": true,
+    "speaker_labels": true,
+    "critical_sound_captions": true
+  },
+  "input_remap": true,
+  "reduced_motion": true,
+  "text_expansion_test": 1.4,
+  "screen_reader_labels": true,
+  "first_boot_accessibility": true,
+  "cjk_fallback_fonts": true,
+  "rtl_smoke_test": true
+}

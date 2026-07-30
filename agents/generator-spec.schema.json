@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generator Spec",
+  "type": "object",
+  "required": [
+    "generator_id",
+    "content_type",
+    "seed_policy",
+    "representation",
+    "hard_invariants",
+    "generation_pipeline",
+    "validation",
+    "repair_policy",
+    "expressive_range_metrics",
+    "fallbacks"
+  ],
+  "properties": {
+    "generator_id": {
+      "type": "string"
+    },
+    "content_type": {
+      "type": "string"
+    },
+    "seed_policy": {
+      "type": "object",
+      "required": [
+        "deterministic",
+        "record_seed"
+      ],
+      "properties": {
+        "deterministic": {
+          "type": "boolean"
+        },
+        "record_seed": {
+          "type": "boolean"
+        },
+        "record_state": {
+          "type": "boolean"
+        }
+      }
+    },
+    "representation": {
+      "type": "string"
+    },
+    "hard_invariants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "description"
+        ]
+      }
+    },
+    "generation_pipeline": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "checks",
+        "max_attempts"
+      ],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      }
+    },
+    "repair_policy": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "expressive_range_metrics": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "fallbacks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "random_tables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "entries"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "entries": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "weight"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

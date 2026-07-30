@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Gameplay Spec",
+  "type": "object",
+  "required": [
+    "experience_goal",
+    "player_verbs",
+    "core_loop",
+    "mechanics",
+    "failure_and_recovery",
+    "playtest_hypotheses"
+  ],
+  "properties": {
+    "experience_goal": {
+      "type": "string",
+      "minLength": 10
+    },
+    "player_verbs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "core_loop": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "step",
+          "player_decision",
+          "state_change",
+          "feedback"
+        ],
+        "properties": {
+          "step": {
+            "type": "string"
+          },
+          "player_decision": {
+            "type": "string"
+          },
+          "state_change": {
+            "type": "string"
+          },
+          "feedback": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "mechanics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "verb",
+          "cost",
+          "success",
+          "failure",
+          "counterplay"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "verb": {
+            "type": "string"
+          },
+          "cost": {
+            "type": "string"
+          },
+          "success": {
+            "type": "string"
+          },
+          "failure": {
+            "type": "string"
+          },
+          "counterplay": {
+            "type": "string"
+          },
+          "godot_owner": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "faucets",
+          "sinks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "faucets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "failure_and_recovery": {
+      "type": "string",
+      "minLength": 5
+    },
+    "playtest_hypotheses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "hypothesis",
+          "measure",
+          "falsifier"
+        ],
+        "properties": {
+          "hypothesis": {
+            "type": "string"
+          },
+          "measure": {
+            "type": "string"
+          },
+          "falsifier": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

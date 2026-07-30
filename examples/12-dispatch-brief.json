@@ -1,0 +1,26 @@
+{
+  "action_tags": [
+    "attack"
+  ],
+  "gameplay_tags": [
+    "combat_loop",
+    "risk_reward",
+    "boss_phase"
+  ],
+  "audio_tags": [
+    "adaptive_music",
+    "combat_music",
+    "stinger"
+  ],
+  "technical_tags": [
+    "animationtree",
+    "audio_bus",
+    "event_bus"
+  ],
+  "needs_godot_implementation": true,
+  "has_playtest_data": true,
+  "data_tags": [
+    "telemetry"
+  ],
+  "evidence_quality": "timestamped"
+}
