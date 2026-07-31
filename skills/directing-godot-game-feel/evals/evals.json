@@ -1,0 +1,29 @@
+{
+  "skill_name": "directing-godot-game-feel",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Use the Godot content director to coordinate a quest, guard AI, save migration, camera, and VO fix.",
+      "expected_output": "Selects a minimum cross-domain team, freezes shared state and ownership, sequences waves, and defines measurable acceptance."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "My vertical slice works separately, but combat events, HUD, music, saves, and cutscenes disagree after reload.",
+      "expected_output": "Recognizes a cross-domain orchestration problem and unifies authoritative contracts before presentation work."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The whole Godot game feels unfinished. I only have a short capture and no profiler or state logs.",
+      "expected_output": "Scopes the review, labels unknowns, requests only decision-changing evidence, and avoids unsupported quality claims."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Fix this isolated typo in one GDScript variable name.",
+      "expected_output": "Does not invoke the cross-domain director; treats the request as a narrow code edit."
+    }
+  ]
+}

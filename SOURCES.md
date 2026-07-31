@@ -1,6 +1,6 @@
 # Sources and Update Policy
 
-访问/整理日期：2026-07-28。技术实现必须按项目实际 Godot stable 版本复核；`latest` 文档可能含未进入 stable 的功能。
+首次整理日期：2026-07-28；发行规范复核：2026-07-31。技术实现必须按项目实际 Godot stable 版本复核；`latest` 文档可能含未进入 stable 的功能。
 
 ## Godot 官方文档
 
@@ -90,3 +90,19 @@ Accessed 2026-07-30:
 
 These sources support the repository packaging, release, community-file and agent-permission guidance. Product behavior and documentation may change; re-check official sources before later releases.
 
+## Skill/plugin and verification hardening
+
+Accessed 2026-07-31:
+
+- OpenAI Codex Skills: https://developers.openai.com/codex/skills/
+- OpenAI plugin packaging: https://developers.openai.com/plugins/build/plugins
+- OpenAI Codex subagents: https://developers.openai.com/codex/subagents/
+- Agent Skills specification: https://agentskills.io/specification
+- Agent Skills script/resource paths: https://agentskills.io/skill-creation/using-scripts
+- Agent Skills evaluation guidance: https://agentskills.io/skill-creation/evaluating-skills
+- Godot command-line tutorial: https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html
+- Godot 4.6.3 release assets: https://github.com/godotengine/godot-builds/releases/tag/4.6.3-stable
+- GitHub artifact attestations: https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations
+- GitHub secure use reference for pinning Actions: https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions
+
+这些来源支持 `agents/openai.yaml`、插件清单、项目级 Custom Agent、Skill 自包含相对路径、正负触发评测、真实 Godot headless 门禁、Action 提交固定和 Release attestation。版本号、哈希和运行时格式属于易变化事实，每次发布必须重新核对。

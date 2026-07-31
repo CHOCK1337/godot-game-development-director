@@ -1,0 +1,29 @@
+{
+  "skill_name": "designing-npc-ai-simulation",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Design a debuggable Godot NPC perception, memory, decision, and navigation contract.",
+      "expected_output": "Separates perception, knowledge, decision, action, pathing, movement, animation, exits, and fallback."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "Guards know my location through walls, then freeze forever when the path becomes invalid.",
+      "expected_output": "Diagnoses omniscient knowledge and missing recovery with explainable debug fields."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The enemies are stupid; I only have a clip with no decision trace.",
+      "expected_output": "Requests stimuli, state, reason, target, cooldown, and path evidence before choosing an AI architecture."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Set subtitle font fallback for Arabic and CJK.",
+      "expected_output": "Defers to UX, accessibility, and localization."
+    }
+  ]
+}

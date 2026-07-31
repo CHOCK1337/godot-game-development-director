@@ -1,0 +1,15 @@
+; Minimal headless validation project.
+config_version=5
+
+[application]
+
+config/name="Godot Director Package Validation"
+
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=180
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

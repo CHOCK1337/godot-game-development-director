@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot NPC AI 与模拟 / NPC AI"
+  short_description: "Godot NPC decisions and recovery / NPC 决策与恢复"
+  default_prompt: "Use $designing-npc-ai-simulation to audit this Godot NPC perception, decision, navigation, crowd, or simulation behavior."
+policy:
+  allow_implicit_invocation: true

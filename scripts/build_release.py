@@ -52,7 +52,7 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def build_release(root: Path, output: Path, version: str = "v0.1.0-alpha") -> dict[str, Any]:
+def build_release(root: Path, output: Path, version: str = "v0.1.0-alpha.1") -> dict[str, Any]:
     root = root.resolve()
     output = output.resolve()
     if not VERSION_RE.fullmatch(version):
@@ -94,7 +94,7 @@ def build_release(root: Path, output: Path, version: str = "v0.1.0-alpha") -> di
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--version", default="v0.1.0-alpha")
+    parser.add_argument("--version", default="v0.1.0-alpha.1")
     parser.add_argument("--output", type=Path, default=None)
     parser.add_argument("--clean", action="store_true")
     args = parser.parse_args()

@@ -1,0 +1,29 @@
+{
+  "skill_name": "designing-godot-gameplay",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Audit my Godot combat loop, risk/reward, economy, and onboarding.",
+      "expected_output": "Maps input, rules, state, feedback, counterplay, resource flow, and falsifiable playtest thresholds."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "Players spam one attack and every upgrade is just five percent more damage.",
+      "expected_output": "Diagnoses shallow decisions and build differentiation without treating reward frequency as depth."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The loop is boring, but I have no capture or playtest data.",
+      "expected_output": "Builds a bounded evidence plan and labels hypotheses instead of claiming what players prefer."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Fix a save-file migration from schema 2 to schema 3.",
+      "expected_output": "Defers to the content pipeline and save domain."
+    }
+  ]
+}

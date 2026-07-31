@@ -1,0 +1,29 @@
+{
+  "skill_name": "polishing-game-presentation-accessibility",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Audit Godot camera shake, HUD, SFX mix, rendering, subtitles, input remapping, and reduced-motion behavior.",
+      "expected_output": "Preserves gameplay facts, maps semantic cues, defines budgets and equivalent channels, and supplies device/language/input checks."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "Combat is unreadable: bloom hides attacks, the camera shakes constantly, and captions omit off-screen cues.",
+      "expected_output": "Coordinates presentation and accessibility around readable timing and equivalent information."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The UI feels bad, but I have no target resolution, language list, or input matrix.",
+      "expected_output": "Requests bounded platform and accessibility evidence and avoids claiming coverage."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Define sequential migration from save schema 4 to 5.",
+      "expected_output": "Defers to the content pipeline and save domain."
+    }
+  ]
+}

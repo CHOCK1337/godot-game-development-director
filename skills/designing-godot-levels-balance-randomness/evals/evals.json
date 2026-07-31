@@ -1,0 +1,29 @@
+{
+  "skill_name": "designing-godot-levels-balance-randomness",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Audit a seeded Godot dungeon generator, difficulty curve, and roguelike run variation.",
+      "expected_output": "Defines topology, hard constraints, seed reproduction, bounded repair, fallback, balance targets, and multi-seed validation."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "Some runs have no reachable key, others repeat the same rooms, and average win rate hides bad seeds.",
+      "expected_output": "Treats reachability and tail-risk as generator and balance failures, not mere randomness."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The procedural levels feel unfair, but no seeds or run logs were saved.",
+      "expected_output": "Requires reproducible seeds and stratified run evidence before tuning."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Rewrite two lines of NPC dialogue for a warmer tone.",
+      "expected_output": "Does not activate the level, balance, and randomness Skill."
+    }
+  ]
+}

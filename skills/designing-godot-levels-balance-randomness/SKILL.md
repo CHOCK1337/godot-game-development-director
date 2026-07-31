@@ -1,9 +1,15 @@
 ---
 name: designing-godot-levels-balance-randomness
-description: Use when a Godot game's levels, difficulty curve, combat balance, procedural generation, roguelike runs, random events, loot tables, map variation, fairness, replayability, or challenge intensity feel arbitrary, repetitive, unreadable, unfair, unstable, or impossible to tune.
+description: Use when a Godot game's levels, difficulty curve, combat balance, procedural generation, roguelike runs, random events, loot tables, map variation, fairness, replayability, or challenge intensity feel arbitrary, repetitive, unreadable, unfair, unstable, or impossible to tune. 当拓扑、难度、seed、硬约束和局内变化需要可复现验收时使用。
 ---
 
 # Designing Godot Levels, Balance, and Randomness
+
+## 边界 / Boundary
+
+负责空间拓扑、全局挑战模型、随机约束、seed 可复现和局内变化池；核心机制语义、任务故事、NPC 决策和运行时表现由对应领域负责。
+
+开始前必须取得玩家能力边界、目标强度、拓扑/生成表示、失败 seed、参数版本和分层运行数据。无法复现的“随机不公平”先补 seed 与遥测，不先调概率。
 
 ## 核心原则
 
@@ -35,6 +41,7 @@ description: Use when a Godot game's levels, difficulty curve, combat balance, p
 - 生成管线：represent → generate → validate → repair → decorate → instantiate。
 - 坏种子复现信息与安全 fallback。
 - 试玩假设、样本分层、通过阈值和失败阈值。
+- 参数/内容版本、owner、受影响路径、回滚和明确 fallback。
 
 ## 禁止
 

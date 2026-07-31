@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 内容管线与存档 / Content Pipelines"
+  short_description: "Godot content schema and save tools / 内容数据与存档工具"
+  default_prompt: "Use $building-godot-content-pipelines to design or audit this Godot content schema, save migration, or authoring tool."
+policy:
+  allow_implicit_invocation: true

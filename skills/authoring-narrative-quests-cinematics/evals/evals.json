@@ -1,0 +1,29 @@
+{
+  "skill_name": "authoring-narrative-quests-cinematics",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Audit this Godot branching quest and cutscene for reload and skip safety.",
+      "expected_output": "Defines quest graph, stable IDs, state ownership, commit points, recovery, and sequence-break tests."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "A dead NPC speaks after loading and skipping the cinematic leaves the objective locked.",
+      "expected_output": "Routes to narrative and quest-state continuity, distinguishing story meaning from persistence implementation."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "The dialogue feels AI-written, but I only have six lines and no character brief.",
+      "expected_output": "Identifies missing knowledge, intent, relationship, and consequence evidence before rewriting."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Optimize a particle shader that has no narrative or quest behavior.",
+      "expected_output": "Does not activate the narrative Skill."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "skill_name": "directing-interactive-game-music",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Design adaptive Godot exploration and combat music with stems, stingers, and phrase-safe transitions.",
+      "expected_output": "Defines musical function, stable state axes, hysteresis, cooldowns, quantized transitions, bus priority, and fallback."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "The BGM flips every time one enemy appears and never leaves room for dialogue or SFX.",
+      "expected_output": "Diagnoses unstable state mapping and missing dynamic-space priorities."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "Make the boss music more epic; there is no gameplay state map or cue sheet.",
+      "expected_output": "Asks what information and pacing the music must serve before prescribing style."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Repair an unreachable key in a procedural dungeon.",
+      "expected_output": "Does not activate the interactive music Skill."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "skill_name": "building-godot-content-pipelines",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Design versioned Godot save migrations and a validator for stable content IDs.",
+      "expected_output": "Defines schema versions, sequential migrations, atomic writes, backups, ID rules, and executable validation."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "Duplicating enemy scenes keeps breaking references and old saves cannot resolve renamed items.",
+      "expected_output": "Recognizes a content architecture and persistence problem rather than proposing more copied scenes."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "Our save system is fragile; I do not know the current schema version or have sample saves.",
+      "expected_output": "Requests schema and compatibility evidence, preserves unknown keys, and avoids destructive migration advice."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Compose a boss battle music motif.",
+      "expected_output": "Does not activate the content-pipeline Skill."
+    }
+  ]
+}

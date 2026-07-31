@@ -1,0 +1,37 @@
+{
+  "name": "godot-game-development-director",
+  "version": "0.1.0-alpha.1",
+  "description": "Bilingual, evidence-driven Godot content direction and specialist workflows.",
+  "author": {
+    "name": "CHOCK1337",
+    "url": "https://github.com/CHOCK1337"
+  },
+  "homepage": "https://github.com/CHOCK1337/godot-game-development-director",
+  "repository": "https://github.com/CHOCK1337/godot-game-development-director",
+  "license": "Apache-2.0",
+  "keywords": [
+    "godot",
+    "game-development",
+    "game-design",
+    "content-production",
+    "accessibility"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Godot Game Development Director",
+    "shortDescription": "Evidence-driven Godot content team workflows",
+    "longDescription": "Coordinate bilingual Godot gameplay, level, narrative, NPC AI, music, presentation, accessibility, content pipeline, and QA work with explicit ownership and validation.",
+    "developerName": "CHOCK1337",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/CHOCK1337/godot-game-development-director",
+    "defaultPrompt": [
+      "Audit this Godot feature across gameplay, presentation, persistence, and QA.",
+      "Route this Godot problem to the minimum specialist team and define acceptance gates.",
+      "用中文审查这个 Godot 内容功能，并给出可验证的修复计划。"
+    ]
+  }
+}

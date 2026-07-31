@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 关卡平衡与随机 / Levels & Balance"
+  short_description: "Godot levels, balance, and seeds / 关卡平衡与随机"
+  default_prompt: "Use $designing-godot-levels-balance-randomness to audit this Godot level, balance curve, procedural generator, or run variation."
+policy:
+  allow_implicit_invocation: true

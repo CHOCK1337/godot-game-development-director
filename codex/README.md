@@ -1,28 +1,46 @@
-# Codex Setup
+# Codex Setup / Codex 安装
 
-## Recommended installation
+## Recommended / 推荐
 
 From the package root:
 
 ```bash
 python scripts/install.py \
   --target codex \
-  --preset godot-content-team \
+  --preset full \
   --destination /path/to/your-godot-project
 
 python scripts/doctor.py /path/to/your-godot-project
 ```
 
-The installer copies the root Skill and all module Skills under `.agents/skills/` and copies `codex/AGENTS.md.example` to the project root as `AGENTS.md` when no project policy exists.
+This installs 9 self-contained Skills under `.agents/skills/` and 28 project-scoped custom agents under `.codex/agents/`. It does not modify global Codex agents.
 
-## Manual installation
+该命令会安装 9 个自包含 Skill 和 28 个项目级 Custom Agent，不修改全局 Codex Agent。
 
-1. Copy the root package under `.agents/skills/directing-godot-game-feel/` or another Skill directory recognized by your Codex setup.
-2. Copy each module directory from `skills/` into `.agents/skills/`.
-3. Copy `AGENTS.md.example` to the Godot project root as `AGENTS.md` and adjust paths if needed.
-4. Give a normal task description. The root Skill and project policy tell Codex to triage and select specialists automatically; manual `@agent` naming is not required.
-5. Specialists analyze isolated domains. The main thread owns shared edits and final verification.
+The project policy template is optional:
 
-If the runtime has no subagent feature, follow `workflows/sequential-fallback.md`. For a no-Agent workflow, use `workflows/manual-no-agent.md`.
+```bash
+python scripts/install.py \
+  --target codex \
+  --preset full \
+  --write-agents-md \
+  --destination /path/to/your-godot-project
+```
 
-Exact runtime configuration can change. This package relies on portable prompts, Skill discovery, deterministic routing, and `AGENTS.md` rather than undocumented custom-agent formats.
+`--write-agents-md` only creates `AGENTS.md` when absent. Existing project policy is never overwritten, including with `--force`.
+
+## Presets / 预设
+
+- `director`: cross-domain director only.
+- `modules`: 8 independent domain Skills.
+- `full`: director, modules, and project custom agents.
+
+Legacy aliases remain accepted: `core`, `skills-only`, and `godot-content-team`.
+
+## Invocation / 调用
+
+The director disables broad implicit activation. Use `$directing-godot-game-feel` for a cross-domain request, or invoke a narrow module such as `$designing-npc-ai-simulation` directly.
+
+总 Skill 不会对所有 Godot 请求隐式触发。跨领域任务使用 `$directing-godot-game-feel`；单领域任务直接使用对应模块。
+
+If the runtime has no subagent feature, use the sequential workflow documented in the installed director references. The main task owns shared edits and final verification.

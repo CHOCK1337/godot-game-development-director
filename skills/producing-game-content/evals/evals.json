@@ -1,0 +1,29 @@
+{
+  "skill_name": "producing-game-content",
+  "evals": [
+    {
+      "id": 1,
+      "category": "direct",
+      "prompt": "Turn this Godot vision into a vertical slice, milestone gates, dependency map, freeze, and cut order.",
+      "expected_output": "Defines observable pillars, Must/Should/Could/Won't, owners, dependencies, exit evidence, risks, and cuts."
+    },
+    {
+      "id": 2,
+      "category": "indirect",
+      "prompt": "We keep generating enemies and quests but cannot finish a playable slice.",
+      "expected_output": "Diagnoses scope multiplication and freezes interfaces before further variants."
+    },
+    {
+      "id": 3,
+      "category": "incomplete",
+      "prompt": "Help finish all content; there is no player outcome, inventory, milestone, or team capacity.",
+      "expected_output": "First establishes outcome, inventory, constraints, and maximum three blockers."
+    },
+    {
+      "id": 4,
+      "category": "negative",
+      "prompt": "Debug one NavigationAgent path query.",
+      "expected_output": "Does not activate content-production scope unless broader planning is requested."
+    }
+  ]
+}

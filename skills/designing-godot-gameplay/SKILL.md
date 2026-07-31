@@ -1,9 +1,15 @@
 ---
 name: designing-godot-gameplay
-description: Use when a Godot game's mechanics, core loop, combat rules, progression, economy, encounters, difficulty, onboarding, rewards, or player choices feel generic, overloaded, shallow, arbitrary, repetitive, or disconnected from the intended experience.
+description: Use when a Godot game's mechanics, core loop, combat rules, progression, economy, encounters, difficulty, onboarding, rewards, or player choices feel generic, overloaded, shallow, arbitrary, repetitive, or disconnected from the intended experience. 当玩法因果、成本、反馈、反制或成长边界需要可证伪设计时使用。
 ---
 
 # Designing Godot Gameplay
+
+## 边界 / Boundary
+
+负责玩家 verbs、规则、成本、反馈、反制、失败学习、经济语义和遭遇目标。关卡拓扑、全局数值模型、程序生成与表现实现由对应模块负责，并通过事件和数据合同连接。
+
+开始前收集可复现流程、输入与状态时间线、当前数值/资源、失败原因和代表性试玩证据；没有数据时只写假设与采样计划。
 
 ## 原则
 
@@ -27,6 +33,7 @@ description: Use when a Godot game's mechanics, core loop, combat rules, progres
 - 资源 faucet/sink 与成长边界。
 - Godot 状态/资源/事件落点。
 - 试玩计划与通过/失败阈值。
+- 每项变更的 owner、影响路径、权威状态/事件、回滚和明确删减项。
 
 ## 禁止
 

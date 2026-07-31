@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 内容生产与范围 / Content Production"
+  short_description: "Godot content scope and milestones / 内容范围与里程碑"
+  default_prompt: "Use $producing-game-content to scope this Godot content milestone, vertical slice, dependency plan, or cut order."
+policy:
+  allow_implicit_invocation: true

@@ -1,9 +1,15 @@
 ---
 name: directing-interactive-game-music
-description: Use when game BGM, adaptive music, combat music, exploration music, boss music, stems, loops, stingers, transitions, or Godot audio behavior feel generic, repetitive, constantly intense, poorly synchronized, abrupt, noisy, or disconnected from gameplay states.
+description: Use when game BGM, adaptive music, combat music, exploration music, boss music, stems, loops, stingers, transitions, or Godot audio behavior feel generic, repetitive, constantly intense, poorly synchronized, abrupt, noisy, or disconnected from gameplay states. 当音乐功能、状态轴、量化转场和声音空间需要可验证映射时使用。
 ---
 
 # Directing Interactive Game Music
+
+## 边界 / Boundary
+
+负责 BGM 身份、motif、状态轴、水平/垂直结构、stinger、动态范围和留白；Gameplay 产生权威状态，Godot Audio 负责播放器、Bus、并发和运行时消费。
+
+开始前收集 gameplay state/event 时间线、cue/stem 文件、BPM/拍号/loop 点、对白与 SFX 优先级、暂停恢复和频繁抖动案例；只有“更史诗”不足以开始编曲建议。
 
 ## 原则
 
@@ -27,6 +33,7 @@ description: Use when game BGM, adaptive music, combat music, exploration music,
 - Audio Bus 优先级与 ducking。
 - Gameplay Event Contract。
 - Godot 实施与 fallback。
+- 音乐/事件 owner、受影响资源、可听验收阈值、无音乐降级与回滚。
 
 ## 禁止
 

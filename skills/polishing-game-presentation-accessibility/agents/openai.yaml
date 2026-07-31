@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 表现与无障碍 / Presentation & Accessibility"
+  short_description: "Godot presentation and accessibility / 表现与无障碍"
+  default_prompt: "Use $polishing-game-presentation-accessibility to audit this Godot camera, audio, rendering, UX, accessibility, or localization issue."
+policy:
+  allow_implicit_invocation: true

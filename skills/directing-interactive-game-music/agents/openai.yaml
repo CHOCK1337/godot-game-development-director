@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 互动配乐 / Interactive Music"
+  short_description: "设计音乐状态、分层、转场、留白与 Godot 映射"
+  default_prompt: "Use $directing-interactive-game-music to design or audit this Godot adaptive music state, stem, loop, or transition."
+policy:
+  allow_implicit_invocation: true

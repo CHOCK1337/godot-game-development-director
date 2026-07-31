@@ -3,7 +3,7 @@
   "standard_notice": "This manifest is project-specific and is not part of the Agent Skills standard.",
   "package": {
     "name": "godot-game-development-director",
-    "version": "0.1.0-alpha",
+    "version": "0.1.0-alpha.1",
     "license": "Apache-2.0",
     "maturity": "alpha",
     "public_release": true
@@ -18,7 +18,9 @@
   },
   "capabilities": {
     "specialist_agents": 27,
+    "project_codex_agents": 28,
     "module_skills": 8,
+    "installable_skills": 9,
     "engine_focus": ["Godot 4.x"],
     "planned_adapters": ["engine-independent core", "Unity", "Unreal Engine"]
   },
@@ -27,6 +29,8 @@
     "package_validator": "tests/validate_package.py",
     "unit_tests": "python -m unittest discover -s tests -v",
     "release_builder": "scripts/build_release.py",
-    "godot_validation": "Static only in this release build; live engine compilation is required."
+    "skill_reference_validation": "scripts/validate_skill_references.py",
+    "skill_routing_evals": "scripts/validate_skill_evals.py",
+    "godot_validation": "Godot 4.6.3 headless compilation plus deterministic smoke assertions for all 9 shipped GDScript examples."
   }
 }

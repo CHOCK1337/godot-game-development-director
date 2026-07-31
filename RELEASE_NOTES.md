@@ -1,40 +1,34 @@
-# Godot Game Development Director v0.1.0-alpha
+# Godot Game Development Director v0.1.0-alpha.1
 
-First public preview of the project previously developed internally as the v6 content-team package.
+This hardening preview turns the original broad guidance package into a self-contained, testable Codex Skill/plugin distribution.
 
 ## Highlights
 
-- 27 specialist Agent definitions and one orchestrator
-- 8 modular Skills
-- motion, gameplay, level, balance, procedural generation, narrative, NPC AI, camera, rendering, audio, UX, save/content pipeline, and QA workflows
-- deterministic specialist routing
-- JSON contracts, validators, templates, examples, and tests
-- Codex project policy for implicit Skill use and specialist selection
-- public repository health files, installer, doctor, release builder, and GitHub Actions
+- one explicitly invoked cross-domain director plus 8 independently discoverable module Skills
+- 27 specialist roles, one orchestrator, and a generator for 28 project-scoped Codex custom agents
+- distinct `director`, `modules`, and `full` installation presets with legacy aliases
+- opt-in, non-overwriting project `AGENTS.md`
+- Codex plugin manifest and per-Skill `agents/openai.yaml`
+- 36 balanced routing evals, including negative and incomplete-evidence cases
+- relative-reference validation that catches files missing from installed Skills
+- Doctor verification of Skill metadata, referenced resources, receipts, and custom-agent TOML
+- pinned Godot 4.6.3 live compilation and deterministic smoke checks for all 9 GDScript examples
+- commit-pinned GitHub Actions, verified Godot download, release attestation, and immutable release semantics
 
-## Verification performed
+## Verification gates
 
-- package structure validation
-- 56 Python unit tests
-- 11 JSON Schema example validations
-- Python syntax checks
-- Python unit tests
-- JSON and YAML parsing
-- structured example validation
-- forbidden-file and basic secret-pattern scan
-- deterministic release ZIP build
-- SHA-256 checksum generation
-- ZIP CRC verification
-- case-insensitive filename collision scan and Windows extraction smoke test
+- public release structure, UTF-8, forbidden file, and focused secret-pattern checks
+- JSON/YAML/TOML and Python syntax parsing
+- Skill frontmatter, UI metadata, self-contained references, and balanced routing evals
+- package contracts and Python unit tests
+- full installation/Doctor regression tests for all presets and legacy aliases
+- deterministic ZIP, SHA-256, and CRC checks
+- real Godot 4.6.3 headless GDScript compilation and smoke assertions
 
-## Known limitations
+## Remaining limitations
 
-- GDScript examples were not compiled in a live Godot editor in the build environment
-- multi-Agent behavior has not been validated across every Codex or third-party runtime
-- the project is Godot-focused; Unity and Unreal adapters are not included
-- the package does not replace real player testing or professional accessibility review
-- publishing, store operations, legal/privacy compliance, LiveOps, and production online backends are out of scope
-
-## Upgrade status
-
-This is the first public version. Internal v3-v6 numbers are preserved only as pre-public history in the changelog and must not be interpreted as prior public releases.
+- live validation covers the pinned Godot 4.6.3 Linux build, not every supported 4.x release or platform
+- generated project agents still depend on the target Codex runtime's custom-agent support
+- the examples must be adapted to the target project's architecture and authoritative state model
+- real player testing and professional accessibility review remain required
+- publishing, storefront, legal/privacy, LiveOps, and production online backends remain out of scope

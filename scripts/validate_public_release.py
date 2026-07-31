@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import sys
@@ -34,6 +35,8 @@ REQUIRED_FILES = {
     "RELEASE_NOTES.md",
     "manifest.json",
     "requirements-dev.txt",
+    ".codex-plugin/plugin.json",
+    ".github/dependabot.yml",
     "agents/orchestrator.md",
     "agents/routing-table.md",
     "codex/AGENTS.md.example",
@@ -43,6 +46,14 @@ REQUIRED_FILES = {
     "scripts/build_release.py",
     "scripts/install.py",
     "scripts/doctor.py",
+    "scripts/generate_codex_agents.py",
+    "scripts/generate_package_manifest.py",
+    "scripts/run_godot_validation.py",
+    "scripts/validate_skill_evals.py",
+    "scripts/validate_skill_references.py",
+    "skills/directing-godot-game-feel/SKILL.md",
+    "tests/godot_fixture/project.godot",
+    "tests/godot_fixture/validate_package_scripts.gd",
 }
 
 FORBIDDEN_NAMES = {
@@ -80,7 +91,7 @@ def _relative_files(root: Path) -> list[Path]:
     )
 
 
-def _validate_skill(path: Path, errors: list[str]) -> None:
+def _validate_skill(path: Path, errors: list[str], expected_name: str | None = None) -> None:
     text = _read_text(path)
     match = FRONTMATTER_RE.match(text)
     if not match:
@@ -97,8 +108,41 @@ def _validate_skill(path: Path, errors: list[str]) -> None:
     description = fields.get("description", "")
     if not NAME_RE.fullmatch(name):
         errors.append(f"Invalid Skill name '{name}' in {path}")
+    if expected_name is not None and name != expected_name:
+        errors.append(f"Skill name/path mismatch in {path}: {name!r} != {expected_name!r}")
     if not description.startswith("Use when"):
         errors.append(f"Skill description must start with 'Use when': {path}")
+
+
+def _load_local_module(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load validator module: {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _validate_skill_metadata(skill_dir: Path, errors: list[str]) -> None:
+    path = skill_dir / "agents/openai.yaml"
+    if not path.is_file():
+        errors.append(f"Missing Skill UI metadata: {path}")
+        return
+    try:
+        payload = _load_yaml(path)
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"Cannot parse Skill UI metadata {path}: {exc}")
+        return
+    interface = payload.get("interface", {}) if isinstance(payload, dict) else {}
+    for field in ("display_name", "short_description", "default_prompt"):
+        if not isinstance(interface.get(field), str) or not interface[field].strip():
+            errors.append(f"Skill UI metadata missing interface.{field}: {path}")
+    short = interface.get("short_description", "")
+    if isinstance(short, str) and not 25 <= len(short) <= 64:
+        errors.append(f"Skill short_description must be 25-64 characters: {path}")
+    prompt = interface.get("default_prompt", "")
+    if isinstance(prompt, str) and f"${skill_dir.name}" not in prompt:
+        errors.append(f"Skill default_prompt must mention ${skill_dir.name}: {path}")
 
 
 def _load_yaml(path: Path) -> Any:
@@ -157,13 +201,32 @@ def validate_release(root: Path) -> dict[str, Any]:
     skill_paths = sorted((root / "skills").glob("*/SKILL.md"))
     root_skill = root / "SKILL.md"
     if root_skill.is_file():
-        _validate_skill(root_skill, errors)
+        _validate_skill(root_skill, errors, "directing-godot-game-feel")
     for skill in skill_paths:
-        _validate_skill(skill, errors)
+        _validate_skill(skill, errors, skill.parent.name)
+        _validate_skill_metadata(skill.parent, errors)
+
+    reference_validator = _load_local_module(
+        "release_skill_reference_validator",
+        root / "scripts/validate_skill_references.py",
+    )
+    eval_validator = _load_local_module(
+        "release_skill_eval_validator",
+        root / "scripts/validate_skill_evals.py",
+    )
+    for skill_dir in [root, *(path.parent for path in skill_paths)]:
+        for issue in reference_validator.validate_skill_directory(skill_dir):
+            errors.append(f"{skill_dir}: {issue}")
+    for skill in skill_paths:
+        for issue in eval_validator.validate_skill_evals(skill.parent):
+            errors.append(f"{skill.parent}: {issue}")
 
     specialists = sorted((root / "agents" / "specialists").glob("*.md"))
-    if len(skill_paths) < 8:
-        errors.append(f"Expected at least 8 module Skills, found {len(skill_paths)}")
+    module_skills = [path for path in skill_paths if path.parent.name != "directing-godot-game-feel"]
+    if len(module_skills) != 8:
+        errors.append(f"Expected exactly 8 module Skills, found {len(module_skills)}")
+    if len(skill_paths) != 9:
+        errors.append(f"Expected 9 installable Skills including the director, found {len(skill_paths)}")
     if len(specialists) < 27:
         errors.append(f"Expected at least 27 specialists, found {len(specialists)}")
 
@@ -175,7 +238,7 @@ def validate_release(root: Path) -> dict[str, Any]:
             if "not part of the Agent Skills standard" not in notice:
                 errors.append("manifest.json must state that its format is project-specific")
             version = manifest.get("package", {}).get("version")
-            if version != "0.1.0-alpha":
+            if version != "0.1.0-alpha.1":
                 errors.append(f"manifest.json version mismatch: {version!r}")
         except Exception as exc:  # already reported above, keep useful context
             errors.append(f"Cannot validate manifest.json: {exc}")
@@ -183,9 +246,36 @@ def validate_release(root: Path) -> dict[str, Any]:
     readme = root / "README.md"
     if readme.is_file():
         text = _read_text(readme)
-        for phrase in ["v0.1.0-alpha", "27 specialist", "8 modular Skills", "Apache-2.0"]:
+        for phrase in ["v0.1.0-alpha.1", "27 specialist", "8 modular Skills", "Apache-2.0"]:
             if phrase not in text:
                 errors.append(f"README.md missing public-release phrase: {phrase}")
+
+    plugin_path = root / ".codex-plugin/plugin.json"
+    if plugin_path.is_file():
+        try:
+            plugin = json.loads(_read_text(plugin_path))
+            if plugin.get("version") != "0.1.0-alpha.1":
+                errors.append("plugin.json version must match 0.1.0-alpha.1")
+            if plugin.get("skills") != "./skills/":
+                errors.append("plugin.json must expose ./skills/")
+        except Exception as exc:
+            errors.append(f"Cannot validate plugin.json: {exc}")
+
+    package_manifest_path = root / "PACKAGE_MANIFEST.json"
+    if package_manifest_path.is_file():
+        try:
+            manifest_generator = _load_local_module(
+                "release_package_manifest_generator",
+                root / "scripts/generate_package_manifest.py",
+            )
+            expected = manifest_generator.build_manifest(root)
+            actual = json.loads(_read_text(package_manifest_path))
+            if actual != expected:
+                errors.append(
+                    "PACKAGE_MANIFEST.json is stale; run scripts/generate_package_manifest.py"
+                )
+        except Exception as exc:
+            errors.append(f"Cannot validate PACKAGE_MANIFEST.json: {exc}")
 
     digest = hashlib.sha256()
     for path in files:
@@ -220,7 +310,7 @@ def main() -> int:
     else:
         print(
             f"validated {report.get('files', 0)} files, "
-            f"{report.get('skills', 0)} module Skills, "
+            f"{report.get('skills', 0)} installable Skills, "
             f"{report.get('specialists', 0)} specialists"
         )
         for warning in report.get("warnings", []):

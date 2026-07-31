@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 内容开发总编排 / Godot Content Director"
+  short_description: "Godot cross-domain routing and QA / 跨域编排与验收"
+  default_prompt: "Use $directing-godot-game-feel to route this cross-domain Godot request, define shared contracts, and produce an evidence-backed acceptance plan."
+policy:
+  allow_implicit_invocation: false

@@ -5,8 +5,8 @@ The roadmap is directional, not a delivery promise.
 ## v0.1.x — public-preview hardening
 
 - collect real Godot project routing failures and false positives
-- run all GDScript examples in maintained Godot 4.x test projects
-- expand behavioral evaluations for specialist activation, minimal routing, output contracts, and conflict resolution
+- expand live GDScript coverage from the pinned 4.6.3 fixture to a maintained compatibility matrix
+- run behavioral evaluations against real agent outputs, not only static routing fixtures
 - improve installer migration and uninstall support
 - add reproducible sample projects without third-party commercial assets
 - document compatibility by Codex and other Agent Skills runtimes
@@ -23,7 +23,7 @@ The roadmap is directional, not a delivery promise.
 - Unity and Unreal integration adapters
 - genre presets for action RPG, roguelike, platformer, tactical, puzzle, and simulation projects
 - public evaluation corpus and benchmark reports
-- signed release manifests and stronger supply-chain verification
+- signed release manifests in addition to the current artifact attestations
 - documentation site and visual routing explorer
 
 ## Explicitly deferred

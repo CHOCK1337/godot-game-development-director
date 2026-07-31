@@ -33,17 +33,17 @@ func request_state(next_state: StringName, quantization: StringName = &"bar") ->
     if not _active.playing or quantization == &"immediate":
         _pending_at_seconds = _clock_seconds()
         return
-    var bpm := float(state_bpm.get(current_state, 120.0))
-    var beats_per_bar := float(state_beats_per_bar.get(current_state, 4.0))
-    var beat_seconds := 60.0 / max(bpm, 1.0)
-    var quantum := beat_seconds
+    var bpm: float = float(state_bpm.get(current_state, 120.0))
+    var beats_per_bar: float = float(state_beats_per_bar.get(current_state, 4.0))
+    var beat_seconds: float = 60.0 / maxf(bpm, 1.0)
+    var quantum: float = beat_seconds
     if quantization == &"bar":
         quantum *= beats_per_bar
     elif quantization == &"phrase":
         quantum *= beats_per_bar * 4.0
-    var position := _active.get_playback_position()
-    var wait := quantum - fmod(position, quantum)
-    _pending_at_seconds = _clock_seconds() + wait
+    var position: float = _active.get_playback_position()
+    var wait_seconds: float = quantum - fmod(position, quantum)
+    _pending_at_seconds = _clock_seconds() + wait_seconds
 
 func _process(_delta: float) -> void:
     if _pending_at_seconds >= 0.0 and _clock_seconds() >= _pending_at_seconds:

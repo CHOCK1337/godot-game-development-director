@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot 叙事任务与演出 / Narrative & Quests"
+  short_description: "Godot quest continuity and recovery / 任务状态与恢复"
+  default_prompt: "Use $authoring-narrative-quests-cinematics to audit this Godot quest, dialogue, narrative state, or cinematic flow."
+policy:
+  allow_implicit_invocation: true
