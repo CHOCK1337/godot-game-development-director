@@ -42,13 +42,13 @@
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 3800,
-      "sha256": "df158277a53c58f953b8772f6290707a24320cdc1d9699ea2e2a8e8be47822d6"
+      "bytes": 4014,
+      "sha256": "2a0571d554d6cdca27e9f61111f107985923115af14d2cd650fb712628899214"
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 2145,
-      "sha256": "81e0ec3c577c16b748fd98fd2cc9afa82e7ff313a603bccae382abd2f332f994"
+      "bytes": 2359,
+      "sha256": "4bd178bba633690d14aba7264ff56f2c149c1ed7aaed1fa5da6dae2c1f22c6a6"
     },
     {
       "path": ".gitignore",
@@ -1482,8 +1482,8 @@
     },
     {
       "path": "tests/test_public_release_tools.py",
-      "bytes": 9012,
-      "sha256": "39c0e97c1c9445f599cab1affa83ea2c5d522348051cea3dc16d93074cfe5e41"
+      "bytes": 9139,
+      "sha256": "8aef9df138740533e6a292103a758e5432b40d73f9b2ea4f4ada62e3e76b9d50"
     },
     {
       "path": "tests/test_skill_distribution.py",

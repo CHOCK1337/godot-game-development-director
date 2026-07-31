@@ -34,10 +34,14 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          curl --fail --location --retry 3 --output "$GODOT_ARCHIVE" "$GODOT_URL"
-          echo "$GODOT_SHA256  $GODOT_ARCHIVE" | sha256sum --check -
-          unzip -q "$GODOT_ARCHIVE"
-          chmod +x Godot_v4.6.3-stable_linux.x86_64
+          archive="$RUNNER_TEMP/$GODOT_ARCHIVE"
+          install_dir="$RUNNER_TEMP/godot-4.6.3"
+          mkdir -p "$install_dir"
+          curl --fail --location --retry 3 --output "$archive" "$GODOT_URL"
+          echo "$GODOT_SHA256  $archive" | sha256sum --check -
+          unzip -q "$archive" -d "$install_dir"
+          chmod +x "$install_dir/Godot_v4.6.3-stable_linux.x86_64"
+          echo "GODOT_BIN=$install_dir/Godot_v4.6.3-stable_linux.x86_64" >> "$GITHUB_ENV"
 
       - name: Validate public release structure
         run: python scripts/validate_public_release.py
@@ -49,7 +53,7 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Compile and smoke-test shipped GDScript
-        run: python scripts/run_godot_validation.py --godot ./Godot_v4.6.3-stable_linux.x86_64
+        run: python scripts/run_godot_validation.py --godot "$GODOT_BIN"
 
       - name: Build and verify test release asset
         run: |

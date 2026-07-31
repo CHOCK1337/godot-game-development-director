@@ -184,6 +184,8 @@ class ReleaseWorkflowTests(unittest.TestCase):
                 workflow,
             )
             self.assertIn("scripts/run_godot_validation.py", workflow)
+            self.assertIn('archive="$RUNNER_TEMP/$GODOT_ARCHIVE"', workflow)
+            self.assertIn("GODOT_BIN=", workflow)
 
         self.assertIn(
             "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
